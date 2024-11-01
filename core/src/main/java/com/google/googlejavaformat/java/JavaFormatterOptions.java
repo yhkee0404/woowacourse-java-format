@@ -34,7 +34,7 @@ public abstract class JavaFormatterOptions {
 
   public enum Style {
     /** The default Woowacourse Java Style configuration. */
-    WOOWACOURSE(1),
+    WOOWACOURSE(2),
 
     /** The AOSP-compliant configuration. */
     AOSP(2);

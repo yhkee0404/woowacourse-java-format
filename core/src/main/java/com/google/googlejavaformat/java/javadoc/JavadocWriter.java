@@ -418,9 +418,9 @@ final class JavadocWriter {
   }
 
   private int innerIndent() {
-    int innerIndent = continuingListItemCount.value() * 4 + continuingListCount.value() * 2;
+    int innerIndent = continuingListItemCount.value() * 8 + continuingListCount.value() * 4;
     if (continuingFooterTag) {
-      innerIndent += 4;
+      innerIndent += 8;
     }
     return innerIndent;
   }

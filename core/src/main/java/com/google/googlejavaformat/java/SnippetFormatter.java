@@ -60,7 +60,7 @@ public class SnippetFormatter {
     }
   }
 
-  private static final int INDENTATION_SIZE = 2;
+  private static final int INDENTATION_SIZE = 4;
   private final Formatter formatter = new Formatter();
   private static final CharMatcher NOT_WHITESPACE = CharMatcher.whitespace().negate();
 
