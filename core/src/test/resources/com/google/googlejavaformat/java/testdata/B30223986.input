@@ -24,22 +24,22 @@
  * @param <T> concrete subclass
  */
 class Test {
-  /**
-   * Field
-   *
-   * Example:
-   * <pre><code>
-   *   @Annotation("something")
-   *   public void thing() {
-   *   }
-   * </code></pre>
-   *
-   * @param asd
-   */
-  int x() {}
+    /**
+     * Field
+     *
+     * Example:
+     * <pre><code>
+     *   @Annotation("something")
+     *   public void thing() {
+     *   }
+     * </code></pre>
+     *
+     * @param asd
+     */
+    int x() {}
 
-  /**
-   * Inline <code>foo</code>.
-   */
-  int y() {}
+    /**
+     * Inline <code>foo</code>.
+     */
+    int y() {}
 }

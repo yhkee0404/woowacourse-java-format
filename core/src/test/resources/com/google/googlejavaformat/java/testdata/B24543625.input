@@ -22,55 +22,55 @@ class TheTrain {
       _,##'`-._,##'`              
         `-._,##'`              
 */
-  public static final Object THE_TRAIN = null;
+    public static final Object THE_TRAIN = null;
 
 /*
 BLOCK COMMENT
 
 */
-  int x;
+    int x;
 
-            /*               .
-            BLOCK COMMENT    .
+                        /*               .
+                        BLOCK COMMENT    .
 
-            */
-  int y;
+                        */
+    int y;
 
-            /*    .
-  BLOCK COMMENT   .
+                        /*    .
+    BLOCK COMMENT   .
+
+    */
+    int z;
+
+                      /*      .
+  BLOCK COMMENT     .
 
   */
-  int z;
+    int z;
 
-           /*      .
- BLOCK COMMENT     .
+    /*
+    * This is almost javadoc.
+    *
+    */
+    int z;
 
- */
-  int z;
+    /**
+    * This is (was) malformed javadoc.
+    * <pre>
+    System.err.println
+    * </pre>
+    */
+    int z;
 
-  /*
-  * This is almost javadoc.
-  *
-  */
-  int z;
+    private Object f; /*-{
+        System.err.println("asd");
+    }-*/
 
-  /**
-  * This is (was) malformed javadoc.
-  * <pre>
-  System.err.println
-  * </pre>
-  */
-  int z;
+    private native Object f() /*-{
+        System.err.println("asd");
+    }-*/;
 
-  private Object f; /*-{
-    System.err.println("asd");
-  }-*/
-
-  private native Object f() /*-{
-    System.err.println("asd");
-  }-*/;
-
-  private native Object f() /*-{
+    private native Object f() /*-{
 System.err.println("asd");
 }-*/;
 }

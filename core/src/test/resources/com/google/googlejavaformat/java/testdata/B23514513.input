@@ -1,7 +1,7 @@
 class Test {
-  {
-    f(
-        rrr.kkkkk.uuuuuuuu, rrr.iiiiii.ggggggggggggggggg, 
-        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
-  }
+    {
+        f012345678901(
+                r2345rr.kkkkk.uuuuuuuu, rrr.iiiiii.ggggggggggggggggg, 
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+    }
 }
