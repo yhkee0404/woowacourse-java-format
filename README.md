@@ -206,7 +206,7 @@ core 빌드를 마치면 idea_plugin도 빌드할 수 있습니다.
 
 [다운로드][]의 `idea_plugin.zip`은 IntelliJ에서 빌드해서 괜찮습니다.
 
-![IntelliJ > IDE Internal Errors](screenshots/idea_plugin-docker-error.png)
+![IntelliJ > IDE Internal Errors](screenshots/intellij-ide-internal-errors.png)
 
 혹시 윈도우 등에서 Docker Container가 `root` 사용자로 실행되어 파일 소유자가 변경된 경우가 `ls -al` 등으로 확인된다면 다음 실행으로 해결할 수 있습니다:
 
