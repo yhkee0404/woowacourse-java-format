@@ -145,13 +145,13 @@ public class MainTest {
       " * graph",
       " *",
       " * @param foo lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
-          + " eiusmod tempor incididunt ut labore et dolore magna aliqua",
+          + " eiusmod tempor amet amet amet amet incididunt ut labore et dolore magna aliqua",
       " */",
       "class Test {",
-      "  /**",
-      "   * creates entropy",
-      "   */",
-      "  public static void main(String... args) {}",
+      "    /**",
+      "     * creates entropy",
+      "     */",
+      "    public static void main(String... args) {}",
       "}",
     };
     String[] expected = {
@@ -161,12 +161,12 @@ public class MainTest {
       " * <p>graph",
       " *",
       " * @param foo lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
-          + " eiusmod tempor",
-      " *     incididunt ut labore et dolore magna aliqua",
+          + " eiusmod tempor amet amet amet amet",
+      " *         incididunt ut labore et dolore magna aliqua",
       " */",
       "class Test {",
-      "  /** creates entropy */",
-      "  public static void main(String... args) {}",
+      "    /** creates entropy */",
+      "    public static void main(String... args) {}",
       "}",
       "",
     };
@@ -189,10 +189,10 @@ public class MainTest {
       "import java.util.List;",
       "import java.util.ArrayList;",
       "class Test {",
-      "  /**",
-      "   * May be an {@link ArrayList}.",
-      "   */",
-      "  public static List<String> names;",
+      "    /**",
+      "     * May be an {@link ArrayList}.",
+      "     */",
+      "    public static List<String> names;",
       "}",
     };
     String[] expected = {
@@ -200,10 +200,10 @@ public class MainTest {
       "import java.util.List;",
       "",
       "class Test {",
-      "  /**",
-      "   * May be an {@link ArrayList}.",
-      "   */",
-      "  public static List<String> names;",
+      "    /**",
+      "     * May be an {@link ArrayList}.",
+      "     */",
+      "    public static List<String> names;",
       "}",
     };
     InputStream in = new ByteArrayInputStream(joiner.join(input).getBytes(UTF_8));
@@ -273,7 +273,7 @@ public class MainTest {
       "import java.util.ArrayList;",
       "",
       "class Test {",
-      "  ArrayList<String> a = new ArrayList<>();",
+      "    ArrayList<String> a = new ArrayList<>();",
       "ArrayList<String> b = new ArrayList<>();",
       "}",
     };
@@ -533,16 +533,16 @@ public class MainTest {
   public void reflowLongStrings() throws Exception {
     String[] input = {
       "class T {", //
-      "  String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
-          + " one had a chance to interrupt\";",
+      "    String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
+          + " one had a chance chance chance to interrupt\";",
       "}"
     };
     String[] expected = {
       "class T {",
-      "  String s =",
-      "      \"one long incredibly unbroken sentence moving from topic to topic so that no one had"
-          + " a chance\"",
-      "          + \" to interrupt\";",
+      "    String s =",
+      "            \"one long incredibly unbroken sentence moving from topic to topic so that no one had"
+          + " a chance chance chance\"",
+      "                    + \" to interrupt\";",
       "}",
       "",
     };
@@ -561,15 +561,15 @@ public class MainTest {
   public void noReflowLongStrings() throws Exception {
     String[] input = {
       "class T {", //
-      "  String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
-          + " one had a chance to interrupt\";",
+      "    String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
+          + " one had a chance chance chance to interrupt\";",
       "}"
     };
     String[] expected = {
       "class T {",
-      "  String s =",
-      "      \"one long incredibly unbroken sentence moving from topic to topic so that no one had"
-          + " a chance to interrupt\";",
+      "    String s =",
+      "            \"one long incredibly unbroken sentence moving from topic to topic so that no one had"
+          + " a chance chance chance to interrupt\";",
       "}",
       "",
     };
@@ -596,10 +596,10 @@ public class MainTest {
           + " eiusmod tempor incididunt ut labore et dolore magna aliqua",
       " */",
       "class Test {",
-      "  /**",
-      "   * creates entropy",
-      "   */",
-      "  public static void main(String... args) {}",
+      "    /**",
+      "     * creates entropy",
+      "     */",
+      "    public static void main(String... args) {}",
       "}",
       "",
     };
@@ -618,13 +618,13 @@ public class MainTest {
   public void reorderModifiersOptionTest() throws Exception {
     String[] input = {
       "class Test {", //
-      "  static public void main(String... args) {}",
+      "    static public void main(String... args) {}",
       "}",
       "",
     };
     String[] fixed = {
       "class Test {", //
-      "  public static void main(String... args) {}",
+      "    public static void main(String... args) {}",
       "}",
       "",
     };
@@ -642,9 +642,9 @@ public class MainTest {
     Path path = testFolder.newFile("Test.java").toPath();
     String[] input = {
       "class Test {", //
-      "  void f(int package) {",
-      "    int",
-      "  }",
+      "    void f(int package) {",
+      "        int",
+      "    }",
       "}",
       "",
     };
@@ -656,15 +656,15 @@ public class MainTest {
     int errorCode = main.format(path.toAbsolutePath().toString());
     assertWithMessage("Error Code").that(errorCode).isEqualTo(1);
     String[] expected = {
-      path + ":2:13: error: <identifier> expected",
-      "  void f(int package) {",
-      "            ^",
-      path + ":3:5: error: not a statement",
-      "    int",
-      "    ^",
-      path + ":3:8: error: ';' expected",
-      "    int",
-      "       ^",
+      path + ":2:15: error: <identifier> expected",
+      "    void f(int package) {",
+      "              ^",
+      path + ":3:9: error: not a statement",
+      "        int",
+      "        ^",
+      path + ":3:12: error: ';' expected",
+      "        int",
+      "           ^",
       "",
     };
     assertThat(err.toString()).isEqualTo(joiner.join(expected));

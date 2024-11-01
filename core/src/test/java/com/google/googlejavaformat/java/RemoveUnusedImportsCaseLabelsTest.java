@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2021 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -37,12 +38,12 @@ public class RemoveUnusedImportsCaseLabelsTest {
                 "import example.model.TypeA;",
                 "import example.model.TypeB;",
                 "public class Main {",
-                "  public void apply(SealedInterface sealedInterface) {",
-                "    switch(sealedInterface) {",
-                "      case TypeA a -> System.out.println(\"A!\");",
-                "      case TypeB b -> System.out.println(\"B!\");",
+                "    public void apply(SealedInterface sealedInterface) {",
+                "        switch(sealedInterface) {",
+                "            case TypeA a -> System.out.println(\"A!\");",
+                "            case TypeB b -> System.out.println(\"B!\");",
+                "        }",
                 "    }",
-                "  }",
                 "}");
     assertThat(removeUnusedImports(input)).isEqualTo(input);
   }

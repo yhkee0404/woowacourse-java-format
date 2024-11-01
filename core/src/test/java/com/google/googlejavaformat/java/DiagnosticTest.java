@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2015 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -58,15 +59,15 @@ public class DiagnosticTest {
         Joiner.on('\n')
             .join(
                 "public class InvalidSyntax {",
-                "  private static NumPrinter {",
-                "    public static void print(int n) {",
-                "      System.out.printf(\"%d%n\", n);",
+                "    private static NumPrinter {",
+                "        public static void print(int n) {",
+                "            System.out.printf(\"%d%n\", n);",
+                "        }",
                 "    }",
-                "  }",
                 "",
-                "  public static void main(String[] args) {",
-                "    NumPrinter.print(args.length);",
-                "  }",
+                "    public static void main(String[] args) {",
+                "        NumPrinter.print(args.length);",
+                "    }",
                 "}");
 
     StringWriter stdout = new StringWriter();
@@ -79,7 +80,7 @@ public class DiagnosticTest {
 
     int result = main.format(path.toString());
     assertThat(stdout.toString()).isEmpty();
-    assertThat(stderr.toString()).contains("InvalidSyntax.java:2:28: error: <identifier> expected");
+    assertThat(stderr.toString()).contains("InvalidSyntax.java:2:30: error: <identifier> expected");
     assertThat(result).isEqualTo(1);
   }
 

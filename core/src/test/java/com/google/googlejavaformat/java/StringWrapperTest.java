@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2019 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -30,27 +31,28 @@ public class StringWrapperTest {
     String input =
         lines(
             "class T {",
-            // This is a wide line, but has to be split in code because of 100-char limit.
-            "  String s = someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit() "
-                + "+ \"foo bar foo bar foo bar\";",
+            // This is a wide line, but has to be split in code because of 120-char limit.
+            "    String s = someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimitLimit"
+                + "LimitLimitLimit() + \"foo bar foo bar foo bar\";",
             "",
-            "  String someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit() {",
-            "    return null;",
+            "    String someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit() {",
+            "        return null;",
             "  }",
             "}");
     String output =
         lines(
             "class T {",
-            "  String s =",
-            "      someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit()",
-            "          + \"foo bar foo bar foo bar\";",
+            "    String s =",
+            "            someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimitLimit"
+                + "LimitLimitLimit()",
+            "                    + \"foo bar foo bar foo bar\";",
             "",
-            "  String someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit() {",
-            "    return null;",
+            "    String someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit() {",
+            "        return null;",
             "  }",
             "}");
 
-    assertThat(StringWrapper.wrap(100, input, new Formatter())).isEqualTo(output);
+    assertThat(StringWrapper.wrap(120, input, new Formatter())).isEqualTo(output);
   }
 
   @Test
@@ -60,17 +62,17 @@ public class StringWrapperTest {
         lines(
             "package com.mypackage;",
             "public class ReproBug {",
-            "  private String myString;",
-            "  private ReproBug() {",
-            "    String str =",
-            "        \"\"\"",
+            "    private String myString;",
+            "    private ReproBug() {",
+            "        String str =",
+            "                \"\"\"",
             "{\"sourceEndpoint\":\"ri.something.1-1.object-internal.1\",\"targetEndpoint"
                 + "\":\"ri.something.1-1.object-internal.2\",\"typeId\":\"typeId\"}\\",
             "\"\"\";",
             "    myString = str;",
             "  }",
             "}");
-    assertThat(StringWrapper.wrap(100, input, new Formatter())).isEqualTo(input);
+    assertThat(StringWrapper.wrap(120, input, new Formatter())).isEqualTo(input);
   }
 
   // Test that whitespace handling on text block lines only removes spaces, not other control
@@ -84,14 +86,14 @@ public class StringWrapperTest {
         lines(
             "package p;",
             "public class T {",
-            "  String s =",
-            "      \"\"\"",
-            "      \u0007lorem",
-            "      \u0007",
-            "      ipsum",
-            "      \"\"\";",
+            "    String s =",
+            "            \"\"\"",
+            "            \u0007lorem",
+            "            \u0007",
+            "            ipsum",
+            "            \"\"\";",
             "}");
-    String actual = StringWrapper.wrap(100, input, new Formatter());
+    String actual = StringWrapper.wrap(120, input, new Formatter());
     assertThat(actual).isEqualTo(input);
   }
 
@@ -101,22 +103,22 @@ public class StringWrapperTest {
     String input =
         lines(
             "public class T {",
-            "  String s =",
-            "      \"\"\"",
-            "      lorem   ",
-            "      ipsum",
-            "      \"\"\";",
+            "    String s =",
+            "            \"\"\"",
+            "            lorem   ",
+            "            ipsum",
+            "            \"\"\";",
             "}");
     String expected =
         lines(
             "public class T {",
-            "  String s =",
-            "      \"\"\"",
-            "      lorem",
-            "      ipsum",
-            "      \"\"\";",
+            "    String s =",
+            "            \"\"\"",
+            "            lorem",
+            "            ipsum",
+            "            \"\"\";",
             "}");
-    String actual = StringWrapper.wrap(100, input, new Formatter());
+    String actual = StringWrapper.wrap(120, input, new Formatter());
     assertThat(actual).isEqualTo(expected);
   }
 
@@ -130,22 +132,22 @@ public class StringWrapperTest {
     String input =
         lines(
             "public class T {",
-            "  String s =",
-            "      \"\"\"",
-            "      lorem\\u0020",
-            "      ipsum",
-            "      \"\"\";",
+            "    String s =",
+            "            \"\"\"",
+            "            lorem\\u0020",
+            "            ipsum",
+            "            \"\"\";",
             "}");
     String expected =
         lines(
             "public class T {",
-            "  String s =",
-            "      \"\"\"",
-            "      lorem\\u0020",
-            "      ipsum",
-            "      \"\"\";",
+            "    String s =",
+            "            \"\"\"",
+            "            lorem\\u0020",
+            "            ipsum",
+            "            \"\"\";",
             "}");
-    String actual = StringWrapper.wrap(100, input, new Formatter());
+    String actual = StringWrapper.wrap(120, input, new Formatter());
     assertThat(actual).isEqualTo(expected);
   }
 
@@ -155,22 +157,22 @@ public class StringWrapperTest {
     String input =
         lines(
             "public class T {",
-            "  String s =",
-            "      \"\"\"",
-            "      lorem",
-            "     \tipsum",
-            "      \"\"\";",
+            "    String s =",
+            "            \"\"\"",
+            "            lorem",
+            "           \tipsum",
+            "            \"\"\";",
             "}");
     String expected =
         lines(
             "public class T {",
-            "  String s =",
-            "      \"\"\"",
-            "      lorem",
-            "      ipsum",
-            "      \"\"\";",
+            "    String s =",
+            "            \"\"\"",
+            "            lorem",
+            "            ipsum",
+            "            \"\"\";",
             "}");
-    String actual = StringWrapper.wrap(100, input, new Formatter());
+    String actual = StringWrapper.wrap(120, input, new Formatter());
     assertThat(actual).isEqualTo(expected);
   }
 

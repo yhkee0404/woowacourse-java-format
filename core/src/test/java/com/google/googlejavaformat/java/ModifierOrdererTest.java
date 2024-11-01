@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -70,8 +71,8 @@ public class ModifierOrdererTest {
   public void subRange() throws FormatterException {
     String[] lines = {
       "class Test {", //
-      "  static public int a;",
-      "  static public int b;",
+      "    static public int a;",
+      "    static public int b;",
       "}",
     };
     String input = Joiner.on('\n').join(lines);
@@ -90,8 +91,8 @@ public class ModifierOrdererTest {
   public void whitespace() throws FormatterException {
     String[] lines = {
       "class Test {", //
-      "  static",
-      "  public int a;",
+      "    static",
+      "    public int a;",
       "}",
     };
     String input = Joiner.on('\n').join(lines);
@@ -102,7 +103,7 @@ public class ModifierOrdererTest {
         ModifierOrderer.reorderModifiers(
                 new JavaInput(input), Arrays.asList(Range.closedOpen(start, end)))
             .getText();
-    assertThat(output).contains("public\n  static int a;");
+    assertThat(output).contains("public\n    static int a;");
   }
 
   @Test

@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -95,7 +96,7 @@ public class FormattingFilerTest {
                     "package foo;",
                     "",
                     "class Bar {",
-                    "  private String baz;",
+                    "    private String baz;",
                     "}",
                     "")); // trailing newline
   }

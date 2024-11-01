@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -37,8 +38,8 @@ public class RemoveUnusedImportsTest {
           "import java.util.ArrayList;",
           "",
           "class Test {",
-          "  /** could be an {@link ArrayList} */",
-          "  List<String> xs;",
+          "    /** could be an {@link ArrayList} */",
+          "    List<String> xs;",
           "}",
         },
         {
@@ -46,8 +47,8 @@ public class RemoveUnusedImportsTest {
           "import java.util.ArrayList;",
           "",
           "class Test {",
-          "  /** could be an {@link ArrayList} */",
-          "  List<String> xs;",
+          "    /** could be an {@link ArrayList} */",
+          "    List<String> xs;",
           "}",
         },
       },
@@ -71,17 +72,17 @@ public class RemoveUnusedImportsTest {
           "import a.B;",
           "import a.C;",
           "class Test {",
-          "  /** a",
-          "   * {@link A} */",
-          "  void f() {}",
+          "    /** a",
+          "     * {@link A} */",
+          "    void f() {}",
           "}",
         },
         {
           "import a.A;", //
           "class Test {",
-          "  /** a",
-          "   * {@link A} */",
-          "  void f() {}",
+          "    /** a",
+          "     * {@link A} */",
+          "    void f() {}",
           "}",
         },
       },
@@ -90,14 +91,14 @@ public class RemoveUnusedImportsTest {
           "import a.A;import a.B;", //
           "import a.C; // hello",
           "class Test {",
-          "  B b;",
+          "    B b;",
           "}",
         },
         {
           "import a.B;", //
           "// hello",
           "class Test {",
-          "  B b;",
+          "    B b;",
           "}",
         },
       },
@@ -170,13 +171,13 @@ public class RemoveUnusedImportsTest {
         {
           "import java.util.*;", //
           "class Test {",
-          "  List<String> xs;",
+          "    List<String> xs;",
           "}",
         },
         {
           "import java.util.*;", //
           "class Test {",
-          "  List<String> xs;",
+          "    List<String> xs;",
           "}",
         },
       },
@@ -188,9 +189,9 @@ public class RemoveUnusedImportsTest {
           "import com.foo.B;",
           "import com.bar.C;",
           "class Test {",
-          "  A a;",
-          "  B b;",
-          "  C c;",
+          "    A a;",
+          "    B b;",
+          "    C c;",
           "}",
         },
         {
@@ -198,9 +199,9 @@ public class RemoveUnusedImportsTest {
           "import static com.foo.Outer.A;",
           "import com.bar.C;",
           "class Test {",
-          "  A a;",
-          "  B b;",
-          "  C c;",
+          "    A a;",
+          "    B b;",
+          "    C c;",
           "}",
         }
       },
