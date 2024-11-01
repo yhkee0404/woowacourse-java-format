@@ -2,12 +2,10 @@
 
 `woowacourse-java-format`은 [google-java-format][]을 수정한 프로그램입니다. Java 소스 코드를 우아한테크코스의 [Java Style Guide][]에 맞게 포매팅합니다.
 
-기존에 제공되던 [IDE별 설정 파일][]도 간편하게 수정할 수 있지만, 정밀하지 않다는 문제를 발견하고 개발했습니다. 가령 IntelliJ와 Eclipse의 설정에서 지원하는 기능이 다르고 Visual Studio Code는 줄 바꿈 시 이어지는 들여쓰기 칸 수를 별도로 설정할 수 없습니다. [google-java-format][]을 수정한 이유는 import 순서까지 고치는 등 소위 영혼까지 포매팅하기 때문이었습니다:
+기존에 제공되던 [IDE별 설정 파일][]도 간편하게 수정할 수 있지만, 정밀하지 않다는 문제를 발견하고 개발했습니다. 가령 IntelliJ와 Eclipse의 설정에서 지원하는 기능이 다르고 Visual Studio Code는 줄 바꿈 시 이어지는 들여쓰기 칸 수를 별도로 설정할 수 없습니다. [google-java-format][] 개발을 선택한 이유는 import 순서까지 고치는 등 소위 영혼까지 포매팅한다고 언급하기 때문입니다:
 
-> /**
->  * a new Java formatter that follows the Google Java Style
->  * Guide quite precisely---to the letter and to the spirit.
->  *
+> a new Java formatter that follows the Google Java Style
+> Guide quite precisely---to the letter and to the spirit.
 
 [Google Java Style Guide][]과의 차이점은 들여쓰기가 +2칸, 줄 바꿈 시 이어지면 +4칸, 열 제한이 100칸이 아니라는 것입니다. 들여쓰기를 2배 즉 +4칸, +8칸으로, 열 제한을 100칸에서 120칸으로 늘렸습니다. 다음과 같이 정책적으로 설정을 지원하지 않는다는 안내에 따라 따로 개발하고 배포합니다:
 
@@ -26,7 +24,7 @@
 
 ## 사용법
 
-[다운로드][]하고 [google-java-format][] 대신 사용할 수 있습니다.
+[다운로드][]하고 [google-java-format][https://github.com/google/google-java-format/releases] 대신 사용할 수 있습니다.
 
 [다운로드]: https://github.com/yhkee0404/woowacourse-java-format/releases
 
@@ -85,7 +83,9 @@ Code Style은 import 순서를 의미하며 들여쓰기 등은 동일합니다.
 
 ![IntelliJ > File > Settings > woowacourse-java-format Settings](screenshots/intellij-enable.png)
 
-번거로운 활성화 대신 새 프로젝트마다 기본으로 설정할 수도 있습니다: `File > New Projects Setup > Settings for New Projects...` 비슷해 보이지만 `File > Settings`에서와 다르게 `Other Settings`가 보이는 것이 차이점입니다.
+번거로운 활성화 대신 새 프로젝트마다 기본으로 설정할 수도 있습니다: `File > New Projects Setup > Settings for New Projects...`
+
+`File > Settings`와 비슷해 보이지만 달라서, `Other Settings`가 보이는지 여부로 구별할 수 있습니다.
 
 ![IntelliJ > File > New Projects Setup > Settings for New Projects...](screenshots/intellij-default.png)
 
@@ -115,8 +115,7 @@ Code Style은 import 순서를 의미하며 들여쓰기 등은 동일합니다.
     *   [spotify/fmt-maven-plugin](https://github.com/spotify/fmt-maven-plugin)
     *   [talios/googleformatter-maven-plugin](https://github.com/talios/googleformatter-maven-plugin)
     *   [Cosium/maven-git-code-format](https://github.com/Cosium/maven-git-code-format):
-        A maven plugin that automatically deploys google-java-format as a
-        pre-commit git hook.
+        Commit할 때마다 자동 포매팅
 *   SBT plugins
     *   [sbt/sbt-java-formatter](https://github.com/sbt/sbt-java-formatter)
 *   [Github Actions](https://github.com/features/actions)
@@ -124,6 +123,8 @@ Code Style은 import 순서를 의미하며 들여쓰기 등은 동일합니다.
         Push할 때마다 자동 포매팅
 
 ### Java 소스 코드에서 함수 사용하기
+
+package나 디렉토리 이름에 `woowacourse`를 반영하지 않았습니다. [Upstream][google-java-format]과의 비교를 쉽게 하기 위해서입니다.
 
 ```java
 import com.google.googlejavaformat.java.Formatter;
@@ -141,7 +142,7 @@ new Formatter().formatSource(source, output);
 
 #### Maven으로 설치하기
 
-`eclipse_plugin/` 디렉토리의 [pom.xml][]을 참고하세요:
+저장소 등록은 아직 진행 중입니다. `eclipse_plugin/` 디렉토리의 [pom.xml][]을 참고하세요:
 
 ```xml
   <dependencies>
@@ -166,7 +167,7 @@ new Formatter().formatSource(source, output);
 
 #### Gradle로 설치하기
 
-`idea_plugin/` 디렉토리의 [build.gradle.kts][]을 참고하세요:
+저장소 등록은 아직 진행 중입니다. `idea_plugin/` 디렉토리의 [build.gradle.kts][]을 참고하세요:
 
 ```kotlin
 dependencies {
@@ -190,7 +191,7 @@ core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-javadoc.jar
 core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-sources.jar
 core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE.jar
 eclipse_plugin/target/woowacourse-java-format-eclipse-plugin-1.24.0.0_WOOWACOURSE.jar
-idea_plugin/build/distributions/project.zip
+idea_plugin/build/distributions/idea_plugin.zip
 ```
 
 [docker-compose.yml][] 파일을 참고하세요:
@@ -199,19 +200,21 @@ idea_plugin/build/distributions/project.zip
 docker compose up -d core
 ```
 
-core 빌드를 마치면 idea_plugin도 빌드할 수 있습니다:
+core 빌드를 마치면 idea_plugin도 빌드할 수 있습니다.
 
-```zsh
-docker compose up -d core
-```
+그러나 core와 달리 idea_plugin은 빌드 성공에도 불구하고 다음 오류가 발생했으니 참고하세요. 그래서 idea_plugin 빌드는 IntelliJ에서 해 보시기 바랍니다.
 
-혹시 윈도우에서 관리자의 Docker 사용으로 파일 소유자가 변경됐다면 `ls -al` 등으로 확인후 다음을 실행할 수도 있습니다:
+[다운로드][]의 `idea_plugin.zip`은 IntelliJ에서 빌드해서 괜찮습니다.
+
+![IntelliJ > IDE Internal Errors](screenshots/idea_plugin-docker-error.png)
+
+혹시 윈도우 등에서 Docker Container가 `root` 사용자로 실행되어 파일 소유자가 변경된 경우가 `ls -al` 등으로 확인된다면 다음 실행으로 해결할 수 있습니다:
 
 ```zsh
 sudo chown -R `id -u` .
 ```
 
-`idea_plugin/`는 빌드 성공에도 불구하고 에러 메시지가 많은데 아직 이유를 모르겠습니다!
+`idea_plugin/`는 빌드 성공에도 불구하고 에러 메시지가 많은데 이유는 아직 모르겠습니다!
 
 [docker-compose.yml]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/docker-compose.yml
 
