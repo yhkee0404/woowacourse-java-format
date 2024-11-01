@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2023 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,11 +22,11 @@ import com.intellij.openapi.project.Project;
 
 class Notifications {
 
-  static final String PARSING_ERROR_NOTIFICATION_GROUP = "google-java-format parsing error";
+  static final String PARSING_ERROR_NOTIFICATION_GROUP = "woowacourse-java-format parsing error";
   static final String PARSING_ERROR_TITLE = PARSING_ERROR_NOTIFICATION_GROUP;
 
   static String parsingErrorMessage(String filename) {
-    return "google-java-format failed. Does " + filename + " have syntax errors?";
+    return "woowacourse-java-format failed. Does " + filename + " have syntax errors?";
   }
 
   static void displayParsingErrorNotification(Project project, String filename) {

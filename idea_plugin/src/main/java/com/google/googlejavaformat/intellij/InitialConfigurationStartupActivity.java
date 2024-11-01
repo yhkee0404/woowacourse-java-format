@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 
 final class InitialConfigurationStartupActivity implements StartupActivity.Background {
 
-  private static final String NOTIFICATION_TITLE = "Enable google-java-format";
+  private static final String NOTIFICATION_TITLE = "Enable woowacourse-java-format";
 
   @Override
   public void runActivity(@NotNull Project project) {
@@ -47,7 +48,7 @@ final class InitialConfigurationStartupActivity implements StartupActivity.Backg
         new Notification(
             group.getDisplayId(),
             NOTIFICATION_TITLE,
-            "The google-java-format plugin is disabled by default. "
+            "The woowacourse-java-format plugin is disabled by default. "
                 + "<a href=\"enable\">Enable for this project</a>.",
             NotificationType.INFORMATION);
     notification.setListener(

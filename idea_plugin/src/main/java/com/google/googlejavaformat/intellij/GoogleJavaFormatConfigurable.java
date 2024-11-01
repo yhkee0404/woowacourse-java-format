@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +50,7 @@ class GoogleJavaFormatConfigurable extends BaseConfigurable implements Searchabl
   @NotNull
   @Override
   public String getId() {
-    return "google-java-format.settings";
+    return "woowacourse-java-format.settings";
   }
 
   @Nullable
@@ -61,7 +62,7 @@ class GoogleJavaFormatConfigurable extends BaseConfigurable implements Searchabl
   @Nls
   @Override
   public String getDisplayName() {
-    return "google-java-format Settings";
+    return "woowacourse-java-format Settings";
   }
 
   @Nullable
@@ -129,7 +130,7 @@ class GoogleJavaFormatConfigurable extends BaseConfigurable implements Searchabl
     panel = new JPanel();
     panel.setLayout(new GridLayoutManager(3, 2, new Insets(0, 0, 0, 0), -1, -1));
     enable = new JCheckBox();
-    enable.setText("Enable google-java-format");
+    enable.setText("Enable woowacourse-java-format");
     panel.add(
         enable,
         new GridConstraints(

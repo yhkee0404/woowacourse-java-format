@@ -1,4 +1,5 @@
 <!--
+  Copyright 2024 The Woowacourse Java Format Authors
   Copyright 2020 Google Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +15,12 @@
   limitations under the License.
 -->
 
-<idea-plugin url="https://github.com/google/google-java-format/tree/master/idea_plugin"
+<idea-plugin url="https://github.com/yhkee0404/woowacourse-java-format/tree/main/idea_plugin"
   require-restart="true">
-  <id>google-java-format</id>
-  <name>google-java-format</name>
-  <vendor url="https://github.com/google/google-java-format">
-    Google
+  <id>woowacourse-java-format</id>
+  <name>woowacourse-java-format</name>
+  <vendor url="https://github.com/yhkee0404/woowacourse-java-format">
+    The Woowacourse Java Format Authors
   </vendor>
 
   <depends>com.intellij.modules.java</depends>
@@ -27,14 +28,16 @@
   <depends>com.intellij.modules.platform</depends>
 
   <description><![CDATA[
-    Formats source code using the google-java-format tool.<p>
+    Formats source code using the woowacourse-java-format tool.<p>
 
     This plugin requires additional IDE configuration. For more information,
-    <a href="https://github.com/google/google-java-format/blob/master/README.md#intellij-jre-config">read
+    <a href="https://github.com/yhkee0404/woowacourse-java-format/blob/main/README.md#intellij-jre-config">read
     the documentation.</a>
   ]]></description>
   <change-notes><![CDATA[
     <dl>
+      <dt>1.24.0.0_WOOWACOURSE</dt>
+      <dd>Forked to woowacourse-java-format.</dd>
       <dt>1.24.0.0</dt>
       <dd>Updated to use google-java-format 1.24.0.</dd>
       <dt>1.23.0.0</dt>
@@ -101,16 +104,16 @@
     <postStartupActivity implementation="com.google.googlejavaformat.intellij.InitialConfigurationStartupActivity"/>
     <projectConfigurable
       instance="com.google.googlejavaformat.intellij.GoogleJavaFormatConfigurable"
-      id="google-java-format.settings"
-      displayName="google-java-format Settings"/>
+      id="woowacourse-java-format.settings"
+      displayName="woowacourse-java-format Settings"/>
     <projectService
       serviceImplementation="com.google.googlejavaformat.intellij.GoogleJavaFormatSettings"/>
     <projectService serviceImplementation="com.google.googlejavaformat.intellij.JreConfigurationChecker"/>
-    <notificationGroup displayType="STICKY_BALLOON" id="Enable google-java-format"
+    <notificationGroup displayType="STICKY_BALLOON" id="Enable woowacourse-java-format"
       isLogByDefault="false"/>
-    <notificationGroup displayType="STICKY_BALLOON" id="Configure JRE for google-java-format"
+    <notificationGroup displayType="STICKY_BALLOON" id="Configure JRE for woowacourse-java-format"
       isLogByDefault="true"/>
-    <notificationGroup displayType="BALLOON" id="google-java-format parsing error"
+    <notificationGroup displayType="BALLOON" id="woowacourse-java-format parsing error"
       isLogByDefault="false"/>
   </extensions>
 

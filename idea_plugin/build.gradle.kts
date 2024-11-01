@@ -1,5 +1,6 @@
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,10 +27,14 @@ repositories {
   intellijPlatform {
     defaultRepositories()
   }
+
+  flatDir {
+      dirs("../core/target")
+  }
 }
 
-// https://github.com/google/google-java-format/releases
-val googleJavaFormatVersion = "1.24.0"
+// https://github.com/yhkee0404/woowacourse-java-format/releases
+val googleJavaFormatVersion = "1.24.0.0_WOOWACOURSE"
 
 java {
   sourceCompatibility = JavaVersion.VERSION_17
@@ -38,8 +43,8 @@ java {
 
 intellijPlatform {
   pluginConfiguration {
-    name = "google-java-format"
-    version = "${googleJavaFormatVersion}.0"
+    name = "woowacourse-java-format"
+    version = "${googleJavaFormatVersion}"
     ideaVersion {
       sinceBuild = "223"
       untilBuild = provider { null }
@@ -83,7 +88,7 @@ dependencies {
     instrumentationTools()
     testFramework(TestFrameworkType.Plugin.Java)
   }
-  implementation("com.google.googlejavaformat:google-java-format:${googleJavaFormatVersion}")
+  implementation("com.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
   // https://mvnrepository.com/artifact/junit/junit
   testImplementation("junit:junit:4.13.2")
   // https://mvnrepository.com/artifact/com.google.truth/truth

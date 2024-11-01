@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 
 @State(
     name = "GoogleJavaFormatSettings",
-    storages = {@Storage("google-java-format.xml")})
+    storages = {@Storage("woowacourse-java-format.xml")})
 class GoogleJavaFormatSettings implements PersistentStateComponent<GoogleJavaFormatSettings.State> {
 
   private final Project project;
@@ -88,7 +89,7 @@ class GoogleJavaFormatSettings implements PersistentStateComponent<GoogleJavaFor
   static class State {
 
     private EnabledState enabled = EnabledState.UNKNOWN;
-    public JavaFormatterOptions.Style style = JavaFormatterOptions.Style.GOOGLE;
+    public JavaFormatterOptions.Style style = JavaFormatterOptions.Style.WOOWACOURSE;
 
     // enabled used to be a boolean so we use bean property methods for backwards compatibility
     public void setEnabled(@Nullable String enabledStr) {

@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2023 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +46,7 @@ class JreConfigurationChecker {
   }
 
   /**
-   * Determine whether the JRE is configured to work with the google-java-format plugin. If not,
+   * Determine whether the JRE is configured to work with the woowacourse-java-format plugin. If not,
    * display a notification with instructions and return false.
    */
   private static boolean checkJreConfiguration() {
@@ -58,7 +59,7 @@ class JreConfigurationChecker {
           "com.sun.tools.javac.tree.JCTree",
           "com.sun.tools.javac.util.Log");
     } catch (ClassNotFoundException e) {
-      logger.error("Error checking jre configuration for google-java-format", e);
+      logger.error("Error checking jre configuration for woowacourse-java-format", e);
       return false;
     }
   }
@@ -78,7 +79,7 @@ class JreConfigurationChecker {
         .getModule()
         // isExported returns true if the package is either open or exported. Either one is
         // sufficient
-        // to run the google-java-format code (even though the documentation specifies --add-opens).
+        // to run the woowacourse-java-format code (even though the documentation specifies --add-opens).
         .isExported(
             klass.getPackageName(),
             JreConfigurationChecker.class.getClassLoader().getUnnamedModule());
@@ -87,16 +88,16 @@ class JreConfigurationChecker {
   private void displayConfigurationErrorNotification() {
     Notification notification =
         new Notification(
-            "Configure JRE for google-java-format",
-            "Configure the JRE for google-java-format",
-            "The google-java-format plugin needs additional configuration before it can be used. "
+            "Configure JRE for woowacourse-java-format",
+            "Configure the JRE for woowacourse-java-format",
+            "The woowacourse-java-format plugin needs additional configuration before it can be used. "
                 + "<a href=\"instructions\">Follow the instructions here</a>.",
             NotificationType.INFORMATION);
     notification.setListener(
         (n, e) -> {
           IdeUiService.getInstance()
               .browse(
-                  "https://github.com/google/google-java-format/blob/master/README.md#intellij-jre-config");
+                  "https://github.com/yhkee0404/woowacourse-java-format/blob/main/README.md#intellij-jre-config");
           n.expire();
         });
     notification.notify(project);

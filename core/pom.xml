@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+  ~ Copyright 2024 The Woowacourse Java Format Authors
   ~ Copyright 2015 Google Inc.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,17 +21,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.google.googlejavaformat</groupId>
-    <artifactId>google-java-format-parent</artifactId>
-  <version>HEAD-SNAPSHOT</version>
+    <groupId>com.github.yhkee0404.woowacoursejavaformat</groupId>
+    <artifactId>woowacourse-java-format-parent</artifactId>
+  <version>1.24.0.0_WOOWACOURSE</version>
   </parent>
 
-  <artifactId>google-java-format</artifactId>
+  <artifactId>woowacourse-java-format</artifactId>
 
-  <name>Google Java Format</name>
+  <name>Woowacourse Java Format</name>
 
   <description>
-    A Java source code formatter that follows Google Java Style.
+    A Java source code formatter that follows Woowacourse Java Style.
   </description>
 
   <dependencies>
@@ -102,12 +103,12 @@
             <link>https://docs.oracle.com/en/java/javase/11/docs/api</link>
           </links>
           <additionalJOptions>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED,com.google.googlejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED,com.google.googlejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED,com.google.googlejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED,com.google.googlejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED,com.google.googlejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED,com.google.googlejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
           </additionalJOptions>
         </configuration>
         <executions>
@@ -163,7 +164,7 @@
             </manifest>
             <manifestEntries>
               <Automatic-Module-Name>
-                com.google.googlejavaformat
+                com.github.yhkee0404.woowacoursejavaformat
               </Automatic-Module-Name>
             </manifestEntries>
           </archive>
@@ -274,7 +275,7 @@
               </execution>
             </executions>
             <configuration>
-              <imageName>google-java-format</imageName>
+              <imageName>woowacourse-java-format</imageName>
               <classpath>
                 <param>${project.build.directory}/${project.artifactId}-${project.version}-all-deps.jar</param>
               </classpath>

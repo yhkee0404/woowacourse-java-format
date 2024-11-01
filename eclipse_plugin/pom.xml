@@ -1,4 +1,5 @@
 <!--
+  ~ Copyright 2024 The Woowacourse Java Format Authors
   ~ Copyright 2015 Google Inc.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,15 +20,15 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.google.googlejavaformat</groupId>
-  <artifactId>google-java-format-eclipse-plugin</artifactId>
+  <groupId>com.github.yhkee0404.woowacoursejavaformat</groupId>
+  <artifactId>woowacourse-java-format-eclipse-plugin</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <version>1.13.0</version>
+  <version>1.24.0.0_WOOWACOURSE</version>
 
-  <name>Google Java Format Plugin for Eclipse 4.5+</name>
+  <name>Woowacourse Java Format Plugin for Eclipse 4.5+</name>
 
   <description>
-    A Java source code formatter plugin for Eclipse that follows Google Java Style.
+    A Java source code formatter plugin for Eclipse that follows Woowacourse Java Style.
   </description>
 
   <properties>
@@ -37,8 +38,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.google.googlejavaformat</groupId>
-      <artifactId>google-java-format</artifactId>
+      <groupId>com.github.yhkee0404.woowacoursejavaformat</groupId>
+      <artifactId>woowacourse-java-format</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
@@ -48,6 +49,11 @@
       <id>mars</id>
       <layout>p2</layout>
       <url>https://download.eclipse.org/releases/mars</url>
+    </repository>
+    <repository>
+        <id>in-project</id>
+        <name>custom jars</name>
+        <url>file://${project.basedir}/../core/target</url>
     </repository>
   </repositories>
 
@@ -72,7 +78,7 @@
           <stripVersion>true</stripVersion>
           <overWriteReleases>true</overWriteReleases>
           <overWriteSnapshots>true</overWriteSnapshots>
-          <includeArtifactIds>guava,google-java-format</includeArtifactIds>
+          <includeArtifactIds>guava,woowacourse-java-format</includeArtifactIds>
         </configuration>
       </plugin>
 

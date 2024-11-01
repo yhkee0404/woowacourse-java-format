@@ -1,0 +1,27 @@
+services:
+
+  core:
+    image: "maven:3.8.8-eclipse-temurin-21-alpine"
+    volumes:
+      - .:/usr/src/mymaven
+    working_dir: /usr/src/mymaven
+    entrypoint:
+      - sh
+      - -c
+    command:
+      - |
+        mvn clean install
+
+  idea_plugin:
+    image: "gradle:8.10.2-jdk17"
+    volumes:
+      - ./idea_plugin:/home/gradle/project
+      - ./core:/home/gradle/core
+    working_dir: /home/gradle/project
+    entrypoint:
+      - sh
+      - -c
+    command:
+      - |
+        gradle clean
+        gradle buildPlugin

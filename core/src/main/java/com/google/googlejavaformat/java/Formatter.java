@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2015 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -52,8 +53,8 @@ import javax.tools.SimpleJavaFileObject;
 import javax.tools.StandardLocation;
 
 /**
- * This is google-java-format, a new Java formatter that follows the Google Java Style Guide quite
- * precisely---to the letter and to the spirit.
+ * This is woowacourse-java-format, a new Java formatter that follows the Woowacourse Java Style
+ * Guide quite precisely---to the letter and to the spirit.
  *
  * <p>This formatter uses the javac parser to generate an AST. Because the AST loses information
  * about the non-tokens in the input (including newlines, comments, etc.), and even some tokens

@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2021 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -30,7 +31,7 @@ public class GoogleJavaFormatToolProviderTest {
 
   @Test
   public void testUsageOutputAfterLoadingViaToolName() {
-    String name = "google-java-format";
+    String name = "woowacourse-java-format";
 
     assertThat(
             ServiceLoader.load(ToolProvider.class).stream()
@@ -50,7 +51,7 @@ public class GoogleJavaFormatToolProviderTest {
     String usage = err.toString();
 
     // Check that doc links are included.
-    assertThat(usage).containsMatch("http.*/google-java-format");
-    assertThat(usage).contains("Usage: google-java-format");
+    assertThat(usage).containsMatch("http.*/woowacourse-java-format");
+    assertThat(usage).contains("Usage: woowacourse-java-format");
   }
 }

@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2015 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -36,7 +37,7 @@ import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration test for google-java-format. */
+/** Integration test for woowacourse-java-format. */
 @RunWith(JUnit4.class)
 public final class FormatterTest {
 
@@ -344,7 +345,7 @@ public final class FormatterTest {
     }
   }
 
-  // regression test for google-java-format#47
+  // regression test for google/google-java-format#47
   @Test
   public void testTrailingCommentWithoutTerminalNewline() throws Exception {
     assertThat(new Formatter().formatSource("/*\n * my comment */"))
@@ -468,9 +469,10 @@ public final class FormatterTest {
 
     // Just fixing imports preserves whitespace around imports.
     assertThat(RemoveUnusedImports.removeUnusedImports(withBlank)).isEqualTo(withBlank);
-    assertThat(ImportOrderer.reorderImports(withBlank, Style.GOOGLE)).isEqualTo(withBlank);
+    assertThat(ImportOrderer.reorderImports(withBlank, Style.WOOWACOURSE)).isEqualTo(withBlank);
     assertThat(RemoveUnusedImports.removeUnusedImports(withoutBlank)).isEqualTo(withoutBlank);
-    assertThat(ImportOrderer.reorderImports(withoutBlank, Style.GOOGLE)).isEqualTo(withoutBlank);
+    assertThat(ImportOrderer.reorderImports(withoutBlank, Style.WOOWACOURSE))
+        .isEqualTo(withoutBlank);
   }
 
   @Test

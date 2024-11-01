@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2024 The Woowacourse Java Format Authors
 # Copyright 2024 The Google Java Format Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,16 +16,16 @@
 
 set -euox pipefail
 
-time java -jar core/target/google-java-format-*-all-deps.jar || true
+time java -jar core/target/woowacourse-java-format-*-all-deps.jar || true
 
 status=-1
-chmod +x core/target/google-java-format
-if time core/target/google-java-format; then
+chmod +x core/target/woowacourse-java-format
+if time core/target/woowacourse-java-format; then
  status=0
 else
  status=$?
 fi
 if [[ $status -ne 2 ]]; then
-  echo "google-java-format_linux (native) without arguments should have printed usage help and exited with 2, but did not :("
+  echo "woowacourse-java-format_linux (native) without arguments should have printed usage help and exited with 2, but did not :("
   exit 1
 fi

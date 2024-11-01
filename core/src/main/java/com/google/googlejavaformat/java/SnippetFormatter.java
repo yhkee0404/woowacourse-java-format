@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -89,7 +90,9 @@ public class SnippetFormatter {
     return result;
   }
 
-  /** Runs the Google Java formatter on the given source, with only the given ranges specified. */
+  /**
+   * Runs the Woowacourse Java formatter on the given source, with only the given ranges specified.
+   */
   public ImmutableList<Replacement> format(
       SnippetKind kind,
       String source,

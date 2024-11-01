@@ -1,5 +1,6 @@
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2024 The Woowacourse Java Format Authors
+ * Copyright 2016-2020 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -59,7 +60,7 @@ public class ImportOrderer {
    */
   @Deprecated
   public static String reorderImports(String text) throws FormatterException {
-    return reorderImports(text, Style.GOOGLE);
+    return reorderImports(text, Style.WOOWACOURSE);
   }
 
   private String reorderImports() throws FormatterException {
@@ -172,7 +173,7 @@ public class ImportOrderer {
     this.text = text;
     this.toks = toks;
     this.lineSeparator = Newlines.guessLineSeparator(text);
-    if (style.equals(Style.GOOGLE)) {
+    if (style.equals(Style.WOOWACOURSE)) {
       this.importComparator = GOOGLE_IMPORT_COMPARATOR;
       this.shouldInsertBlankLineFn = ImportOrderer::shouldInsertBlankLineGoogle;
     } else if (style.equals(Style.AOSP)) {

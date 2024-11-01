@@ -1,28 +1,29 @@
 #!/usr/bin/env python3
 #
-# ===- google-java-format-diff.py - google-java-format Diff Reformatter -----===#
+# ===- woowacourse-java-format-diff.py - woowacourse-java-format Diff Reformatter -----===#
 #
+#                     The Woowacourse Java Format Authors
 #                     The LLVM Compiler Infrastructure
 #
 # This file is distributed under the University of Illinois Open Source
 # License. See LICENSE.TXT for details.
 #
-# ===------------------------------------------------------------------------===#
+# ===----------------------------------------------------------------------------------===#
 
 """
-google-java-format Diff Reformatter
+woowacourse-java-format Diff Reformatter
 ============================
 
 This script reads input from a unified diff and reformats all the changed
 lines. This is useful to reformat all the lines touched by a specific patch.
 Example usage for git/svn users:
 
-  git diff -U0 HEAD^ | google-java-format-diff.py -p1 -i
-  svn diff --diff-cmd=diff -x-U0 | google-java-format-diff.py -i
+  git diff -U0 HEAD^ | woowacourse-java-format-diff.py -p1 -i
+  svn diff --diff-cmd=diff -x-U0 | woowacourse-java-format-diff.py -i
 
 For perforce users:
 
-  P4DIFF="git --no-pager diff --no-index" p4 diff | ./google-java-format-diff.py -i -p7
+  P4DIFF="git --no-pager diff --no-index" p4 diff | ./woowacourse-java-format-diff.py -i -p7
 
 """
 
@@ -80,7 +81,7 @@ def main():
   parser.add_argument('-v', '--verbose', action='store_true',
                       help='be more verbose, ineffective without -i')
   parser.add_argument('-a', '--aosp', action='store_true',
-                      help='use AOSP style instead of Google Style (4-space indentation)')
+                      help='fix import order using AOSP style instead of Google Style')
   parser.add_argument('--skip-sorting-imports', action='store_true',
                       help='do not fix the import order')
   parser.add_argument('--skip-removing-unused-imports', action='store_true',
@@ -90,9 +91,9 @@ def main():
       action='store_true',
       default=False,
       help='do not reformat javadoc')
-  parser.add_argument('-b', '--binary', help='path to google-java-format binary')
-  parser.add_argument('--google-java-format-jar', metavar='ABSOLUTE_PATH', default=None,
-                      help='use a custom google-java-format jar')
+  parser.add_argument('-b', '--binary', help='path to woowacourse-java-format binary')
+  parser.add_argument('--woowacourse-java-format-jar', metavar='ABSOLUTE_PATH', default=None,
+                      help='use a custom woowacourse-java-format jar')
 
   args = parser.parse_args()
 
@@ -131,7 +132,7 @@ def main():
   elif args.google_java_format_jar:
     base_command = ['java', '-jar', args.google_java_format_jar]
   else:
-    binary = which('google-java-format') or '/usr/bin/google-java-format'
+    binary = which('woowacourse-java-format') or '/usr/bin/woowacourse-java-format'
     base_command = [binary]
 
   if args.i:

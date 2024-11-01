@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -18,22 +19,22 @@ import com.google.auto.value.AutoValue;
 import com.google.errorprone.annotations.Immutable;
 
 /**
- * Options for a google-java-format invocation.
+ * Options for a woowacourse-java-format invocation.
  *
- * <p>Like gofmt, the google-java-format CLI exposes <em>no</em> configuration options (aside from
- * {@code --aosp}).
+ * <p>Like gofmt, the woowacourse-java-format CLI exposes <em>no</em> configuration options (aside
+ * from {@code --aosp}).
  *
- * <p>The goal of google-java-format is to provide consistent formatting, and to free developers
- * from arguments over style choices. It is an explicit non-goal to support developers' individual
- * preferences, and in fact it would work directly against our primary goals.
+ * <p>The goal of woowacourse-java-format is to provide consistent formatting, and to free
+ * developers from arguments over style choices. It is an explicit non-goal to support developers'
+ * individual preferences, and in fact it would work directly against our primary goals.
  */
 @Immutable
 @AutoValue
 public abstract class JavaFormatterOptions {
 
   public enum Style {
-    /** The default Google Java Style configuration. */
-    GOOGLE(1),
+    /** The default Woowacourse Java Style configuration. */
+    WOOWACOURSE(1),
 
     /** The AOSP-compliant configuration. */
     AOSP(2);
@@ -69,7 +70,7 @@ public abstract class JavaFormatterOptions {
   /** Returns a builder for {@link JavaFormatterOptions}. */
   public static Builder builder() {
     return new AutoValue_JavaFormatterOptions.Builder()
-        .style(Style.GOOGLE)
+        .style(Style.WOOWACOURSE)
         .formatJavadoc(true)
         .reorderModifiers(true);
   }

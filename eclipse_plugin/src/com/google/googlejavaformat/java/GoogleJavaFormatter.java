@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -27,7 +28,7 @@ import org.eclipse.text.edits.MultiTextEdit;
 import org.eclipse.text.edits.ReplaceEdit;
 import org.eclipse.text.edits.TextEdit;
 
-/** Runs the Google Java formatter on the given code. */
+/** Runs the Woowacourse Java formatter on the given code. */
 public class GoogleJavaFormatter extends CodeFormatter {
 
   private static final int INDENTATION_SIZE = 2;
@@ -59,7 +60,10 @@ public class GoogleJavaFormatter extends CodeFormatter {
     return buf.toString();
   }
 
-  /** Runs the Google Java formatter on the given source, with only the given ranges specified. */
+  /**
+   * Runs the Woowacourse Java formatter on the given source, with only the given ranges
+   * specified.
+   */
   private TextEdit formatInternal(int kind, String source, IRegion[] regions, int initialIndent) {
     try {
       boolean includeComments =

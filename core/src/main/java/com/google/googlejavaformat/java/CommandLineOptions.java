@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -21,10 +22,10 @@ import com.google.common.collect.TreeRangeSet;
 import java.util.Optional;
 
 /**
- * Command line options for google-java-format.
+ * Command line options for woowacourse-java-format.
  *
- * <p>google-java-format doesn't depend on AutoValue, to allow AutoValue to depend on
- * google-java-format.
+ * <p>woowacourse-java-format doesn't depend on AutoValue, to allow AutoValue to depend on
+ * woowacourse-java-format.
  */
 final class CommandLineOptions {
 
@@ -108,7 +109,7 @@ final class CommandLineOptions {
     return lengths;
   }
 
-  /** Use AOSP style instead of Google Style (4-space indentation). */
+  /** Fix import order using AOSP style instead of Google Style. */
   boolean aosp() {
     return aosp;
   }

@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -155,7 +156,7 @@ final class CommandLineOptionsParser {
    * Parse multiple --lines flags, like {"1:12,14,20:36", "40:45,50"}. Multiple ranges can be given
    * with multiple --lines flags or separated by commas. A single line can be set by a single
    * number. Line numbers are {@code 1}-based, but are converted to the {@code 0}-based numbering
-   * used internally by google-java-format.
+   * used internally by woowacourse-java-format.
    */
   private static void parseRangeSet(RangeSet<Integer> result, String ranges) {
     for (String range : COMMA_SPLITTER.split(ranges)) {

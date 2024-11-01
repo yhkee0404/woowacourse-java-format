@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2021 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -23,7 +24,7 @@ import java.util.spi.ToolProvider;
 public class GoogleJavaFormatToolProvider implements ToolProvider {
   @Override
   public String name() {
-    return "google-java-format";
+    return "woowacourse-java-format";
   }
 
   @Override

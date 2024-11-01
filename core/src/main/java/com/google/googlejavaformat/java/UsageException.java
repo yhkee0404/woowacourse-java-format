@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2015 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -24,12 +25,12 @@ final class UsageException extends Exception {
   private static final Joiner NEWLINE_JOINER = Joiner.on(System.lineSeparator());
 
   private static final String[] DOCS_LINK = {
-    "https://github.com/google/google-java-format",
+    "https://github.com/yhkee0404/woowacourse-java-format",
   };
 
   private static final String[] USAGE = {
     "",
-    "Usage: google-java-format [options] file(s)",
+    "Usage: woowacourse-java-format [options] file(s)",
     "",
     "Options:",
     "  -i, -r, -replace, --replace",
@@ -39,7 +40,7 @@ final class UsageException extends Exception {
     "  --assume-filename, -assume-filename",
     "    File name to use for diagnostics when formatting standard input (default is <stdin>).",
     "  --aosp, -aosp, -a",
-    "    Use AOSP style instead of Google Style (4-space indentation).",
+    "    Fix import order using AOSP style instead of Google Style.",
     "  --fix-imports-only",
     "    Fix import order and remove any unused imports, but do no other formatting.",
     "  --skip-sorting-imports",

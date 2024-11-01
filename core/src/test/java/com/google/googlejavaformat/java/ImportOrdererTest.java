@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -558,7 +559,7 @@ public class ImportOrdererTest {
     @Test
     public void reorder() throws FormatterException {
       try {
-        String output = ImportOrderer.reorderImports(input, Style.GOOGLE);
+        String output = ImportOrderer.reorderImports(input, Style.WOOWACOURSE);
         assertWithMessage("Expected exception").that(reordered).doesNotMatch("^!!");
         assertWithMessage(input).that(output).isEqualTo(reordered);
       } catch (FormatterException e) {

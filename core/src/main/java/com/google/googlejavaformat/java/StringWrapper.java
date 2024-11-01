@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2019 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -106,7 +107,7 @@ public final class StringWrapper {
                 "Something has gone terribly wrong. We planned to make the below formatting change,"
                     + " but have aborted because it would unexpectedly change the AST.\n"
                     + "Please file a bug: "
-                    + "https://github.com/google/google-java-format/issues/new"
+                    + "https://github.com/yhkee0404/woowacourse-java-format/issues/new"
                     + "\n\n=== Actual: ===\n%s\n=== Expected: ===\n%s\n",
                 actual, expected));
       }

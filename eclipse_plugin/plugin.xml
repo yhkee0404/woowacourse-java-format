@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
+  Copyright 2024 The Woowacourse Java Format Authors
   Copyright 2020 Google Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +23,7 @@
    <javaFormatter
          class="com.google.googlejavaformat.java.GoogleJavaFormatter"
          id="com.google.googlejavaformat.java.GoogleJavaFormatter"
-         name="google-java-format">
+         name="woowacourse-java-format">
    </javaFormatter>
    </extension>
 </plugin>

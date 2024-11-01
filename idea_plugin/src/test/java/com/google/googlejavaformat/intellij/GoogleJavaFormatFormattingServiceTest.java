@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2023 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -115,7 +116,7 @@ public class GoogleJavaFormatFormattingServiceTest {
 
   @Test
   public void canChangeWhitespaceOnlyDoesNotReorderModifiers() throws Exception {
-    settings.setStyle(Style.GOOGLE);
+    settings.setStyle(Style.WOOWACOURSE);
     PsiFile file =
         createPsiFile(
             "com/foo/FormatTest.java",
@@ -139,7 +140,7 @@ public class GoogleJavaFormatFormattingServiceTest {
 
   @Test
   public void canChangeWhitespaceOnlyDoesNotReformatJavadoc() throws Exception {
-    settings.setStyle(Style.GOOGLE);
+    settings.setStyle(Style.WOOWACOURSE);
     PsiFile file =
         createPsiFile(
             "com/foo/FormatTest.java",
@@ -168,7 +169,7 @@ public class GoogleJavaFormatFormattingServiceTest {
 
   @Test
   public void canChangeNonWhitespaceReordersModifiers() throws Exception {
-    settings.setStyle(Style.GOOGLE);
+    settings.setStyle(Style.WOOWACOURSE);
     PsiFile file =
         createPsiFile(
             "com/foo/FormatTest.java",
@@ -190,7 +191,7 @@ public class GoogleJavaFormatFormattingServiceTest {
 
   @Test
   public void canChangeNonWhitespaceReformatsJavadoc() throws Exception {
-    settings.setStyle(Style.GOOGLE);
+    settings.setStyle(Style.WOOWACOURSE);
     PsiFile file =
         createPsiFile(
             "com/foo/FormatTest.java",

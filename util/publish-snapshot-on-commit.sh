@@ -1,3 +1,4 @@
+# Copyright 2024 The Woowacourse Java Format Authors
 # Copyright 2020 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,10 +15,10 @@
 
 # https://github.com/google/dagger/blob/master/util/publish-snapshot-on-commit.sh
 
-if [ "$TRAVIS_REPO_SLUG" == "google/google-java-format" ] && \
+if [ "$TRAVIS_REPO_SLUG" == "yhkee0404/woowacourse-java-format" ] && \
    [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] && \
    [ "$TRAVIS_PULL_REQUEST" == "false" ] && \
-   [ "$TRAVIS_BRANCH" == "master" ]; then
+   [ "$TRAVIS_BRANCH" == "main" ]; then
   echo -e "Publishing maven snapshot...\n"
 
   mvn clean source:jar deploy --settings="util/settings.xml" -DskipTests=true -Dinvoker.skip=true -Dmaven.javadoc.skip=true

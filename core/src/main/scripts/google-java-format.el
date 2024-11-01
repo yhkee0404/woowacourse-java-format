@@ -1,5 +1,6 @@
-;;; google-java-format.el --- Format code with google-java-format -*- lexical-binding: t; -*-
+;;; woowacourse-java-format.el --- Format code with woowacourse-java-format -*- lexical-binding: t; -*-
 ;;
+;; Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
 ;; Copyright 2015 Google, Inc. All Rights Reserved.
 ;;
 ;; Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,44 +22,44 @@
 ;;; Commentary:
 
 ;; This package allows a user to filter code through
-;; google-java-format, fixing its formatting.
+;; woowacourse-java-format, fixing its formatting.
 
 ;; To use it, ensure the directory of this file is in your `load-path'
 ;; and add
 ;;
-;;   (require 'google-java-format)
+;;   (require 'woowacourse-java-format)
 ;;
 ;; to your .emacs configuration.
 
-;; You may also want to bind `google-java-format-region' to a key:
+;; You may also want to bind `woowacourse-java-format-region' to a key:
 ;;
-;;   (global-set-key [C-M-tab] #'google-java-format-region)
+;;   (global-set-key [C-M-tab] #'woowacourse-java-format-region)
 
 ;;; Code:
 
-(defgroup google-java-format nil
-  "Format code using google-java-format."
+(defgroup woowacourse-java-format nil
+  "Format code using woowacourse-java-format."
   :group 'tools)
 
-(defcustom google-java-format-executable
-  "/usr/bin/google-java-format"
-  "Location of the google-java-format executable.
+(defcustom woowacourse-java-format-executable
+  "/usr/bin/woowacourse-java-format"
+  "Location of the woowacourse-java-format executable.
 
 A string containing the name or the full path of the executable."
-  :group 'google-java-format
+  :group 'woowacourse-java-format
   :type '(file :must-match t :match (lambda (widget file) (file-executable-p file)))
   :risky t)
 
-(defcustom google-java-format-arguments
+(defcustom woowacourse-java-format-arguments
   '()
-  "Arguments to pass into google-java-format-executable"
-  :group 'google-java-format
+  "Arguments to pass into woowacourse-java-format-executable"
+  :group 'woowacourse-java-format
   :type '(repeat string)
   :risky t)
 
 ;;;###autoload
-(defun google-java-format-region (start end)
-  "Use google-java-format to format the code between START and END.
+(defun woowacourse-java-format-region (start end)
+  "Use woowacourse-java-format to format the code between START and END.
 If called interactively, uses the region, if there is one.  If
 there is no region, then formats the current line."
   (interactive
@@ -66,17 +67,17 @@ there is no region, then formats the current line."
        (list (region-beginning) (region-end))
      (list (point) (1+ (point)))))
   (let ((cursor (point))
-        (temp-buffer (generate-new-buffer " *google-java-format-temp*"))
-        (stderr-file (make-temp-file "google-java-format")))
+        (temp-buffer (generate-new-buffer " *woowacourse-java-format-temp*"))
+        (stderr-file (make-temp-file "woowacourse-java-format")))
     (unwind-protect
         (let ((status (apply #'call-process-region
                              ;; Note that emacs character positions are 1-indexed,
-                             ;; and google-java-format is 0-indexed, so we have to
+                             ;; and woowacourse-java-format is 0-indexed, so we have to
                              ;; subtract 1 from START to line it up correctly.
                              (point-min) (point-max)
-                             google-java-format-executable
+                             woowacourse-java-format-executable
                              nil (list temp-buffer stderr-file) t
-                             (append google-java-format-arguments
+                             (append woowacourse-java-format-arguments
                                      `("--offset" ,(number-to-string (1- start))
                                        "--length" ,(number-to-string (- end start))
                                        "-"))))
@@ -89,10 +90,10 @@ there is no region, then formats the current line."
                   (point-min) (line-end-position)))))
           (cond
            ((stringp status)
-            (error "google-java-format killed by signal %s%s" status stderr))
+            (error "woowacourse-java-format killed by signal %s%s" status stderr))
            ((not (zerop status))
-            (error "google-java-format failed with code %d%s" status stderr))
-           (t (message "google-java-format succeeded%s" stderr)
+            (error "woowacourse-java-format failed with code %d%s" status stderr))
+           (t (message "woowacourse-java-format succeeded%s" stderr)
               (delete-region (point-min) (point-max))
               (insert-buffer-substring temp-buffer)
               (goto-char cursor))))
@@ -100,13 +101,13 @@ there is no region, then formats the current line."
       (when (buffer-name temp-buffer) (kill-buffer temp-buffer)))))
 
 ;;;###autoload
-(defun google-java-format-buffer ()
-  "Use google-java-format to format the current buffer."
+(defun woowacourse-java-format-buffer ()
+  "Use woowacourse-java-format to format the current buffer."
   (interactive)
-  (google-java-format-region (point-min) (point-max)))
+  (woowacourse-java-format-region (point-min) (point-max)))
 
 ;;;###autoload
-(defalias 'google-java-format 'google-java-format-region)
+(defalias 'woowacourse-java-format 'woowacourse-java-format-region)
 
-(provide 'google-java-format)
-;;; google-java-format.el ends here
+(provide 'woowacourse-java-format)
+;;; woowacourse-java-format.el ends here

@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2015 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -46,7 +47,7 @@ public final class Main {
   private static final String STDIN_FILENAME = "<stdin>";
 
   static String versionString() {
-    return "google-java-format: Version " + GoogleJavaFormatVersion.version();
+    return "woowacourse-java-format: Version " + GoogleJavaFormatVersion.version();
   }
 
   private final PrintWriter outWriter;
@@ -118,7 +119,7 @@ public final class Main {
 
     JavaFormatterOptions options =
         JavaFormatterOptions.builder()
-            .style(parameters.aosp() ? Style.AOSP : Style.GOOGLE)
+            .style(parameters.aosp() ? Style.AOSP : Style.WOOWACOURSE)
             .formatJavadoc(parameters.formatJavadoc())
             .build();
 

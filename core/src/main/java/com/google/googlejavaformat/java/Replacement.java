@@ -1,5 +1,6 @@
 /*
- * Copyright 2014 Google Inc. All rights reserved.
+ * Copyright 2024 The Woowacourse Java Format Authors. All rights reserved.
+ * Copyright 2014-2019 Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -23,8 +24,8 @@ import java.util.Objects;
 /**
  * Represents a range in the original source and replacement text for that range.
  *
- * <p>google-java-format doesn't depend on AutoValue, to allow AutoValue to depend on
- * google-java-format.
+ * <p>woowacourse-java-format doesn't depend on AutoValue, to allow AutoValue to depend on
+ * woowacourse-java-format.
  */
 public final class Replacement {
 

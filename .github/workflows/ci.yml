@@ -1,3 +1,4 @@
+# Copyright 2024 The Woowacourse Java Format Authors
 # Copyright 2020 The Google Java Format Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +18,10 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   test-OpenJDK:
@@ -109,7 +110,7 @@ jobs:
   publish_snapshot:
     name: "Publish snapshot"
     needs: test-OpenJDK
-    if: github.event_name == 'push' && github.repository == 'google/google-java-format' && github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.repository == 'yhkee0404/woowacourse-java-format' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: "Check out repository"

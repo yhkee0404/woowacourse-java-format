@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,7 @@ import java.util.Objects;
 
 /** Configuration options for the formatting style. */
 enum UiFormatterStyle {
-  GOOGLE("Default Google Java style", Style.GOOGLE),
+  GOOGLE("Default Woowacourse Java style", Style.WOOWACOURSE),
   AOSP("Android Open Source Project (AOSP) style", Style.AOSP);
 
   private final String description;

@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2023 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +36,7 @@ import java.util.List;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 
-/** Uses {@code google-java-format} to reformat code. */
+/** Uses {@code woowacourse-java-format} to reformat code. */
 public class GoogleJavaFormatFormattingService extends AsyncDocumentFormattingService {
 
   public static final ImmutableSet<ImportOptimizer> IMPORT_OPTIMIZERS =
@@ -61,7 +62,7 @@ public class GoogleJavaFormatFormattingService extends AsyncDocumentFormattingSe
 
   @Override
   protected String getName() {
-    return "google-java-format";
+    return "woowacourse-java-format";
   }
 
   private static Formatter createFormatter(Style style, boolean canChangeWhiteSpaceOnly) {

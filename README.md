@@ -1,58 +1,68 @@
-# google-java-format
+# woowacourse-java-format
 
-`google-java-format` is a program that reformats Java source code to comply with
-[Google Java Style][].
+`woowacourse-java-format`은 [google-java-format][]을 수정한 프로그램입니다. Java 소스 코드를 우아한테크코스의 [Java Style Guide][]에 맞게 포매팅합니다.
 
-[Google Java Style]: https://google.github.io/styleguide/javaguide.html
+기존에 제공되던 [IDE별 설정 파일][]도 간편하게 수정할 수 있지만, 정밀하지 않다는 문제를 발견하고 개발했습니다. 가령 IntelliJ와 Eclipse의 설정에서 지원하는 기능이 다르고 Visual Studio Code는 줄 바꿈 시 이어지는 들여쓰기 칸 수를 별도로 설정할 수 없습니다. [google-java-format][]을 수정한 이유는 import 순서까지 고치는 등 소위 영혼까지 포매팅하기 때문이었습니다:
 
-## Using the formatter
+> /**
+>  * a new Java formatter that follows the Google Java Style
+>  * Guide quite precisely---to the letter and to the spirit.
+>  *
 
-### From the command-line
+[Google Java Style Guide][]과의 차이점은 들여쓰기가 +2칸, 줄 바꿈 시 이어지면 +4칸, 열 제한이 100칸이 아니라는 것입니다. 들여쓰기를 2배 즉 +4칸, +8칸으로, 열 제한을 100칸에서 120칸으로 늘렸습니다. 다음과 같이 정책적으로 설정을 지원하지 않는다는 안내에 따라 따로 개발하고 배포합니다:
 
-[Download the formatter](https://github.com/google/google-java-format/releases)
-and run it with:
+> ***Note:*** *There is no configurability as to the formatter's algorithm for
+> formatting. This is a deliberate design decision to unify our code formatting on
+> a single format.*
 
+[google-java-format]: https://github.com/google/google-java-format
+[Java Style Guide]: https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java
+[Google Java Style Guide]: https://google.github.io/styleguide/javaguide.html
+[IDE별 설정 파일]: https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+
+## Contributing
+
+일반 사용자를 넘어 간단한 의견 공유부터 코드 리뷰, 테스트 코드 오류 제보 등을 통해 `The Woowacourse Java Format Authors`에 합류해 보세요 :tada: 참고로 소스 코드 수정이 테스트 코드 수정보다 훨씬 적었답니다!
+
+## 사용법
+
+[다운로드][]하고 [google-java-format][] 대신 사용할 수 있습니다.
+
+[다운로드]: https://github.com/yhkee0404/woowacourse-java-format/releases
+
+### 바로 실행해 보기
+
+`woowacourse-java-format-1.24.0-all-deps.jar` 파일을 [다운로드][]하고 Java로 실행할 수 있습니다. Java 독립적인 운영체제별 실행 파일은 곧 배포할 예정입니다.
+
+`--aosp` (Android Open Source Project (AOSP) style로 import 고치기) 등 터미널에서 사용 가능한 CLI 옵션은 `--help`를 참고하세요. `git diff`와도 연동할 수 있습니다: [google-java-format-diff.py][].
+
+```zsh
+java -jar woowacourse-java-format-1.24.0-all-deps.jar Sample.java
 ```
-java -jar /path/to/google-java-format-${GJF_VERSION?}-all-deps.jar <options> [files...]
-```
 
-The formatter can act on whole files, on limited lines (`--lines`), on specific
-offsets (`--offset`), passing through to standard-out (default) or altered
-in-place (`--replace`).
+[google-java-format-diff.py]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/scripts/woowacourse-java-format-diff.py
 
-To reformat changed lines in a specific patch, use
-[`google-java-format-diff.py`](https://github.com/google/google-java-format/blob/master/scripts/google-java-format-diff.py).
+### Visual Studio Code에서 사용하기
 
-***Note:*** *There is no configurability as to the formatter's algorithm for
-formatting. This is a deliberate design decision to unify our code formatting on
-a single format.*
+`Format Document` 그리고 `Organize Imports`와 연동할 수 있습니다.
 
-### IntelliJ, Android Studio, and other JetBrains IDEs
+[Google Java Format for VS Code][] Extension을 설치하고 `woowacourse-java-format-1.24.0-all-deps.jar` 파일 경로를 입력한 다음 저장하세요: `settings.json`에서 `java.format.settings.google.executable`, 또는 `File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable`
 
-A
-[google-java-format IntelliJ plugin](https://plugins.jetbrains.com/plugin/8527)
-is available from the plugin repository. To install it, go to your IDE's
-settings and select the `Plugins` category. Click the `Marketplace` tab, search
-for the `google-java-format` plugin, and click the `Install` button.
+![Visual Studio Code > File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable](screenshots/vscode-enable.png)
 
-The plugin will be disabled by default. To enable,
-[open the Project settings](https://www.jetbrains.com/help/idea/configure-project-settings.html),
-then click "google-java-format Settings" and check the "Enable
-google-java-format" checkbox.
+단축키를 참고하세요: `(Command(or Control) + Shift + P`
 
-To enable it by default in new projects,
-[open the default settings for new projects](https://www.jetbrains.com/help/idea/configure-project-settings.html#new-default-settings)
-and configure it under "Other Settings/google-java-format Settings".
+![Visual Studio Code > Command(or Control) + Shift + P](screenshots/vscode-shortcuts.png)
 
-When enabled, it will replace the normal `Reformat Code` and `Optimize Imports`
-actions.
+[Google Java Format for VS Code]: https://marketplace.visualstudio.com/items?itemName=JoseVSeb.google-java-format-for-vs-code
+
+### IntelliJ, Android Studio 등 JetBrains IDE용 Plugin 설치하기
+
+`Reformat Code` 그리고 `Optimize Imports`와 연동할 수 있습니다.
 
 #### IntelliJ JRE Config
 
-The google-java-format plugin uses some internal classes that aren't available
-without extra configuration. To use the plugin, you need to
-[add some options to your IDE's Java runtime](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options).
-To do that, go to `Help→Edit Custom VM Options...` and paste in these lines:
+설치하기에 앞서 `Help > Edit Custom VM Options...`에서 다음을 입력하고 저장한 후 창을 끄고 재시작해 주세요.
 
 ```
 --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
@@ -63,29 +73,45 @@ To do that, go to `Help→Edit Custom VM Options...` and paste in these lines:
 --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
 ```
 
-Once you've done that, restart the IDE.
+![IntelliJ > Help > Edit Custom VM Options...](screenshots/intellij-jre-config.png)
+
+다음으로 `idea_plugin.zip` 파일을 [다운로드][]하고 `File > Settings > Plugins > Install Plugin from Disk...`에서 선택합니다. Marketplace 등록은 아직 진행 중이니 [다운로드][]해 주세요.
+
+![IntelliJ > File > Settings > Plugins > Install Plugin from Disk...](screenshots/intellij-install-local.png)
+
+프로젝트별 활성화가 필요합니다: `File > Settings > woowacourse-java-format Settings`
+
+Code Style은 import 순서를 의미하며 들여쓰기 등은 동일합니다.
+
+![IntelliJ > File > Settings > woowacourse-java-format Settings](screenshots/intellij-enable.png)
+
+번거로운 활성화 대신 새 프로젝트마다 기본으로 설정할 수도 있습니다: `File > New Projects Setup > Settings for New Projects...` 비슷해 보이지만 `File > Settings`에서와 다르게 `Other Settings`가 보이는 것이 차이점입니다.
+
+![IntelliJ > File > New Projects Setup > Settings for New Projects...](screenshots/intellij-default.png)
+
+단축키를 참고하세요: `Double Shift > Actions`
+
+![IntelliJ > Double Shift > Actions](screenshots/intellij-shortcuts.png)
 
 ### Eclipse
 
-The latest version of the `google-java-format` Eclipse plugin can be downloaded
-from the [releases page](https://github.com/google/google-java-format/releases).
-Drop it into the Eclipse
-[drop-ins folder](http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fp2_dropins_format.html)
-to activate the plugin.
+`woowacourse-java-format-eclipse-plugin-1.24.0.0_WOOWACOURSE.jar` 파일을 [다운로드][]하고 [dropins][]에 폴더에 옮겨 주세요. `Window > Preferences > Java > Code Style > Formatter > Formatter Implementation > woowacourse-java-format`에서 설정할 수 있습니다.
 
-The plugin adds a `google-java-format` formatter implementation that can be
-configured in `Window > Preferences > Java > Code Style > Formatter > Formatter
-Implementation`.
+[dropins]: http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fp2_dropins_format.html
 
-### Third-party integrations
+### 기타 Plugin 설치하기
 
-*   Visual Studio Code
-    *   [google-java-format-for-vs-code](https://marketplace.visualstudio.com/items?itemName=JoseVSeb.google-java-format-for-vs-code)
+다양한 IDE를 지원하는 [Spotless Integration]도 연동할 수 있습니다. Gradle Plugin, Maven Plugin도 있고, GitHub Actions도 있습니다. 다만 IntelliJ처럼 [VM Options](#intellij-jre-config) 설정이 필요할지도 모릅니다: JDK 16 이후 [JEP 396][]: Strongly Encapsulate JDK Internals by Default
+
+[JEP 396]: https://openjdk.java.net/jeps/396
+[Spotless Integration]: https://github.com/diffplug/spotless/blob/main/plugin-gradle/IDE_HOOK.md
+[Spotless Plugin]: https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format
+
 *   Gradle plugins
-    *   [spotless](https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format)
+    *   [Spotless Plugin][]
     *   [sherter/google-java-format-gradle-plugin](https://github.com/sherter/google-java-format-gradle-plugin)
 *   Apache Maven plugins
-    *   [spotless](https://github.com/diffplug/spotless/tree/main/plugin-maven#google-java-format)
+    *   [Spotless Plugin][]
     *   [spotify/fmt-maven-plugin](https://github.com/spotify/fmt-maven-plugin)
     *   [talios/googleformatter-maven-plugin](https://github.com/talios/googleformatter-maven-plugin)
     *   [Cosium/maven-git-code-format](https://github.com/Cosium/maven-git-code-format):
@@ -95,52 +121,17 @@ Implementation`.
     *   [sbt/sbt-java-formatter](https://github.com/sbt/sbt-java-formatter)
 *   [Github Actions](https://github.com/features/actions)
     *   [googlejavaformat-action](https://github.com/axel-op/googlejavaformat-action):
-        Automatically format your Java files when you push on github
+        Push할 때마다 자동 포매팅
 
-### as a library
+### Java 소스 코드에서 함수 사용하기
 
-The formatter can be used in software which generates java to output more
-legible java code. Just include the library in your maven/gradle/etc.
-configuration.
-
-`google-java-format` uses internal javac APIs for parsing Java source. The
-following JVM flags are required when running on JDK 16 and newer, due to
-[JEP 396: Strongly Encapsulate JDK Internals by Default](https://openjdk.java.net/jeps/396):
-
+```java
+import com.google.googlejavaformat.java.Formatter;
 ```
---add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
---add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
---add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED
---add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED
---add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
---add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-```
-
-#### Maven
-
-```xml
-<dependency>
-  <groupId>com.google.googlejavaformat</groupId>
-  <artifactId>google-java-format</artifactId>
-  <version>${google-java-format.version}</version>
-</dependency>
-```
-
-#### Gradle
-
-```groovy
-dependencies {
-  implementation 'com.google.googlejavaformat:google-java-format:$googleJavaFormatVersion'
-}
-```
-
-You can then use the formatter through the `formatSource` methods. E.g.
 
 ```java
 String formattedSource = new Formatter().formatSource(sourceString);
 ```
-
-or
 
 ```java
 CharSource source = ...
@@ -148,33 +139,79 @@ CharSink output = ...
 new Formatter().formatSource(source, output);
 ```
 
-Your starting point should be the instance methods of
-`com.google.googlejavaformat.java.Formatter`.
+#### Maven으로 설치하기
 
-## Building from source
+`eclipse_plugin/` 디렉토리의 [pom.xml][]을 참고하세요:
 
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>com.github.yhkee0404.woowacoursejavaformat</groupId>
+      <artifactId>woowacourse-java-format</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+        <id>in-project</id>
+        <name>custom jars</name>
+        <url>file://${project.basedir}/../core/target</url>
+    </repository>
+  </repositories>
 ```
-mvn install
+
+[pom.xml]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/eclipse_plugin/pom.xml
+[build.gradle.kts]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/idea_plugin/build.gradle.kts
+
+#### Gradle로 설치하기
+
+`idea_plugin/` 디렉토리의 [build.gradle.kts][]을 참고하세요:
+
+```kotlin
+dependencies {
+  implementation("com.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
+}
+
+repositories {
+  flatDir {
+      dirs("../core/target")
+  }
+}
 ```
 
-## Contributing
+## 빌드해 보기
 
-Please see [the contributors guide](CONTRIBUTING.md) for details.
+다음 파일들을 빌드할 수 있습니다.
 
-## License
-
-```text
-Copyright 2015 Google Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License. You may obtain a copy of
-the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-License for the specific language governing permissions and limitations under
-the License.
+```zsh
+core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-all-deps.jar
+core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-javadoc.jar
+core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-sources.jar
+core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE.jar
+eclipse_plugin/target/woowacourse-java-format-eclipse-plugin-1.24.0.0_WOOWACOURSE.jar
+idea_plugin/build/distributions/project.zip
 ```
+
+[docker-compose.yml][] 파일을 참고하세요:
+
+```zsh
+docker compose up -d core
+```
+
+core 빌드를 마치면 idea_plugin도 빌드할 수 있습니다:
+
+```zsh
+docker compose up -d core
+```
+
+혹시 윈도우에서 관리자의 Docker 사용으로 파일 소유자가 변경됐다면 `ls -al` 등으로 확인후 다음을 실행할 수도 있습니다:
+
+```zsh
+sudo chown -R `id -u` .
+```
+
+`idea_plugin/`는 빌드 성공에도 불구하고 에러 메시지가 많은데 아직 이유를 모르겠습니다!
+
+[docker-compose.yml]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/docker-compose.yml
+

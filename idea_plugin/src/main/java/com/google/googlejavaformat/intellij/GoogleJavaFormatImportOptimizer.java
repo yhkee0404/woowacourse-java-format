@@ -1,4 +1,5 @@
 /*
+ * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2023 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +30,7 @@ import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 
-/** Uses {@code google-java-format} to optimize imports. */
+/** Uses {@code woowacourse-java-format} to optimize imports. */
 public class GoogleJavaFormatImportOptimizer implements ImportOptimizer {
 
   @Override
