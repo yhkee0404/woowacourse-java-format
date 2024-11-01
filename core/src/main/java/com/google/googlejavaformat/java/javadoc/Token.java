@@ -102,7 +102,7 @@ final class Token {
      * autowrapping inside these sections -- and doing so naively, to boot. The wrapped line would
      * have no indentation after "* " or, possibly worse, it might begin with an arbitrary amount of
      * whitespace that didn't fit on the previous line. Of course, by doing this, we're potentially
-     * creating lines of more than 100 characters. But it seems fair to call in the humans to
+     * creating lines of more than 120 characters. But it seems fair to call in the humans to
      * resolve such problems.
      */
     LITERAL,
