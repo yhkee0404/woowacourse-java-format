@@ -26,7 +26,7 @@
 
 ## 사용법
 
-[다운로드][]하고 [google-java-format][https://github.com/google/google-java-format/releases] 대신 사용할 수 있습니다.
+[다운로드][]하고 [google-java-format](https://github.com/google/google-java-format/releases) 대신 사용할 수 있습니다.
 
 [다운로드]: https://github.com/yhkee0404/woowacourse-java-format/releases
 
