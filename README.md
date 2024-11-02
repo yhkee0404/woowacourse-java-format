@@ -2,11 +2,12 @@
 
 `woowacourse-java-format`은 [google-java-format][]을 수정한 프로그램입니다. Java 소스 코드를 우아한테크코스의 [Java Style Guide][]에 맞게 포매팅합니다.
 
-기존에 제공되던 [IDE별 설정 파일][]도 간편하게 수정할 수 있지만, 정밀하지 않다는 문제를 발견하고 개발했습니다. 가령 IntelliJ와 Eclipse의 설정에서 지원하는 기능이 다르고 Visual Studio Code는 줄 바꿈 시 이어지는 들여쓰기 칸 수를 별도로 설정할 수 없습니다. [google-java-format][] 개발을 선택한 이유는 Import 순서까지 고치는 등 소위 영혼까지 포매팅한다고 언급하기 때문입니다: [Why we need IDEA plugin as we already can import the xml file?][]
+기존에 제공되던 [IDE별 설정 파일][]도 간편하게 수정할 수 있지만, 정밀하지 않다는 문제를 발견하고 개발했습니다. 가령 IntelliJ와 Eclipse의 설정에서 지원하는 기능이 다르고 Visual Studio Code에서 권장하는 [Language Support for Java(TM) by Red Hat][]은 줄 바꿈 시 이어지는 들여쓰기 칸 수를 별도로 설정할 수 없습니다. [google-java-format][] 개발을 선택한 이유는 Import 순서까지 고치는 등 소위 영혼까지 포매팅한다고 언급하기 때문입니다: [Why we need IDEA plugin as we already can import the xml file?][]
 
 > a new Java formatter that follows the Google Java Style
 > Guide quite precisely---to the letter and to the spirit.
 
+[Language Support for Java(TM) by Red Hat]: https://marketplace.visualstudio.com/items?itemName=redhat.java
 [Why we need IDEA plugin as we already can import the xml file?]: https://github.com/google/google-java-format/issues/308#issuecomment-420175773
 
 [Google Java Style Guide][]과의 차이점은 들여쓰기가 +2칸, 줄 바꿈 시 이어지면 +4칸, 열 제한이 100칸이 아니라는 것입니다. 들여쓰기를 2배 즉 +4칸, +8칸으로, 열 제한을 100칸에서 120칸으로 늘렸습니다. 다음과 같이 정책적으로 설정을 지원하지 않는다는 안내에 따라 따로 개발하고 배포합니다:
@@ -26,41 +27,16 @@
 
 ## 사용법
 
-[다운로드][]하고 [google-java-format](https://github.com/google/google-java-format/releases) 대신 사용할 수 있습니다.
+[Jetbrains Marketplace][]에서 바로 설치하거나, Github Releases에서 [다운로드][]하고 [google-java-format](https://github.com/google/google-java-format/releases) 대신 사용할 수 있습니다.
 
+[Jetbrains Marketplace]: https://plugins.jetbrains.com/plugin/25728-woowacourse-java-format
 [다운로드]: https://github.com/yhkee0404/woowacourse-java-format/releases
 
-### 바로 실행해 보기
-
-`woowacourse-java-format-1.24.0-all-deps.jar` 파일을 [다운로드][]하고 Java로 실행할 수 있습니다. Java 독립적인 운영체제별 실행 파일은 곧 배포할 예정입니다.
-
-```zsh
-java -jar woowacourse-java-format-1.24.0-all-deps.jar Sample.java
-```
-
-`--aosp` (Android Open Source Project (AOSP) Style로 Import 고치기) 등 터미널에서 사용 가능한 CLI 옵션은 `--help`를 참고하세요. `git diff`와도 연동할 수 있습니다: [google-java-format-diff.py][]
-
-[google-java-format-diff.py]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/scripts/woowacourse-java-format-diff.py
-
-### Visual Studio Code에서 사용하기
-
-`Format Document` 그리고 `Organize Imports`와 연동할 수 있습니다.
-
-[Google Java Format for VS Code][] Extension을 설치하고 `woowacourse-java-format-1.24.0-all-deps.jar` 파일 경로를 입력한 다음 저장하세요: `settings.json`에서 `java.format.settings.google.executable`, 또는 `File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable`
-
-![Visual Studio Code > File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable](screenshots/vscode-enable.png)
-
-단축키를 참고하세요: `(Command(or Control) + Shift + P`
-
-![Visual Studio Code > Command(or Control) + Shift + P](screenshots/vscode-shortcuts.png)
-
-[Google Java Format for VS Code]: https://marketplace.visualstudio.com/items?itemName=JoseVSeb.google-java-format-for-vs-code
-
-### IntelliJ, Android Studio 등 JetBrains IDE용 Plugin 설치하기
+### IntelliJ, Android Studio 등 JetBrains IDE에 Plugin 설치하기
 
 `Reformat Code` 그리고 `Optimize Imports`와 연동할 수 있습니다.
 
-문자열 상수가 열 제한 초과를 방지하는 Reflow 기능이 빠져 있습니다. 추가 예정입니다: google/google-java-format#566
+문자열 상수의 열 제한 초과를 방지하는 Reflow 기능이 빠져 있습니다. 추가 예정입니다: google/google-java-format#566
 
 #### IntelliJ JRE Config
 
@@ -77,7 +53,7 @@ java -jar woowacourse-java-format-1.24.0-all-deps.jar Sample.java
 
 ![IntelliJ > Help > Edit Custom VM Options...](screenshots/intellij-jre-config.png)
 
-`File > Settings > Plugins > Marketplace`에서 검색하고 설치한 후 재시작해 주세요:
+`File > Settings > Plugins > Marketplace`에서 [woowacourse-java-format][Jetbrains Marketplace]을 검색하고 설치한 후 재시작해 주세요:
 
 ![IntelliJ > File > Settings > Plugins > Marketplace](screenshots/intellij-install-marketplace.png)
 
@@ -97,9 +73,37 @@ Code Style은 Import 순서를 의미하며 들여쓰기 등은 동일합니다.
 
 ![IntelliJ > Double Shift > Actions](screenshots/intellij-shortcuts.png)
 
-### Eclipse
+### [다운로드][]하고 바로 실행하기
 
-Import 순서 고치는 기능과, 문자열 상수가 열 제한 초과를 방지하는 Reflow 기능이 없습니다. 추가 예정이지만 선택할 UI가 없을 것 같으니 Eclipse Plugin 대신 후술할 [Spotless Plugin](#기타-Plugin-설치하기)을 사용해도 좋습니다.
+`woowacourse-java-format-1.24.0-all-deps.jar` 파일을 [다운로드][]하고 Java로 실행할 수 있습니다. Java 독립적인 운영체제별 실행 파일은 곧 배포할 예정입니다.
+
+```zsh
+java -jar woowacourse-java-format-1.24.0-all-deps.jar Sample.java
+```
+
+`--aosp` (Android Open Source Project (AOSP) Style로 Import 고치기) 등 터미널에서 사용 가능한 CLI 옵션은 `--help`를 참고하세요. `git diff`와도 연동할 수 있습니다: [google-java-format-diff.py][]
+
+[google-java-format-diff.py]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/scripts/woowacourse-java-format-diff.py
+
+### [다운로드][]하고 Visual Studio Code에 Extension 설치하기
+
+`Format Document` 그리고 `Organize Imports`와 연동할 수 있습니다.
+
+`woowacourse-java-format-1.24.0-all-deps.jar` 파일을 [다운로드][]하고 [Google Java Format for VS Code][] Extension을 설치해 주세요.
+
+`settings.json`에서 `java.format.settings.google.executable`, 또는 `File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable`에 `woowacourse-java-format-1.24.0-all-deps.jar` 파일 경로를 입력하고 저장해 주세요: 
+
+![Visual Studio Code > File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable](screenshots/vscode-enable.png)
+
+단축키를 참고하세요: `(Command(or Control) + Shift + P`
+
+![Visual Studio Code > Command(or Control) + Shift + P](screenshots/vscode-shortcuts.png)
+
+[Google Java Format for VS Code]: https://marketplace.visualstudio.com/items?itemName=JoseVSeb.google-java-format-for-vs-code
+
+### [다운로드][]하고 Eclipse에 Plugin 설치하기
+
+Import 순서 고치는 기능과, 문자열 상수의 열 제한 초과를 방지하는 Reflow 기능이 없습니다. 추가 예정이지만 선택할 UI가 없을 것 같으니 Eclipse Plugin 대신 후술할 [Spotless Plugin](#기타-Plugin-설치하기)을 사용해도 좋습니다.
 
 `woowacourse-java-format-eclipse-plugin-1.24.0.0_WOOWACOURSE.jar` 파일을 [다운로드][]하고 `dropins` 폴더에 옮겨 주세요.
 
