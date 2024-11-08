@@ -76,13 +76,12 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: current
+          working-directory: idea_plugin
 
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@v4
         with:
-          working-directory: ./idea_plugin
-          gradle-version: current
+          build-root-directory: idea_plugin
 
       - name: Publish Idea plugin
         env:
@@ -90,7 +89,8 @@ jobs:
           JETBRAINS_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
           JETBRAINS_PRIVATE_KEY: ${{ secrets.JETBRAINS_PRIVATE_KEY }}
           JETBRAINS_CERTIFICATE_CHAIN: ${{ secrets.JETBRAINS_CERTIFICATE_CHAIN }}
-        run: gradle -p idea_plugin --no-daemon publishPlugin
+        working-directory: idea_plugin
+        run: ./gradlew -p idea_plugin --no-daemon publishPlugin
 
       - name: Add Artifacts to Release Entry
         uses: softprops/action-gh-release@v0.1.14
