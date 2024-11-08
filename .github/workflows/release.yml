@@ -46,8 +46,8 @@ jobs:
       - name: Bump Version Number
         run: |
           mvn --no-transfer-progress versions:set versions:commit -DnewVersion="${{ github.event.inputs.version }}"
-          mvn --no-transfer-progress versions:set versions:commit -DnewVersion="${{ github.event.inputs.version }}" -pl eclipse_plugin
-          mvn tycho-versions:update-eclipse-metadata -pl eclipse_plugin
+          mvn -pl eclipse_plugin --no-transfer-progress versions:set versions:commit -DnewVersion="${{ github.event.inputs.version }}"
+          mvn -pl eclipse_plugin --no-transfer-progress tycho-versions:update-eclipse-metadata
           git ls-files | grep -E '(pom.xml|MANIFEST.MF)$' | xargs git add
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git config --global user.name "${{ github.actor }}"
@@ -80,6 +80,7 @@ jobs:
 
       - name: Publish Idea plugin
         env:
+          WOOWACOURSE_LOCAL_VERSION: ${{ github.event.inputs.version }}
           JETBRAINS_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
           JETBRAINS_PRIVATE_KEY: ${{ secrets.JETBRAINS_PRIVATE_KEY }}
           JETBRAINS_CERTIFICATE_CHAIN: ${{ secrets.JETBRAINS_CERTIFICATE_CHAIN }}
