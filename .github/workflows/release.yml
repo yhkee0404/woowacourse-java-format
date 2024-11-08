@@ -61,7 +61,7 @@ jobs:
           CI_DEPLOY_USERNAME: ${{ secrets.CI_DEPLOY_USERNAME }}
           CI_DEPLOY_PASSWORD: ${{ secrets.CI_DEPLOY_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: mvn --no-transfer-progress -pl '!eclipse_plugin' -P sonatype-oss-release clean deploy"
+        run: mvn --no-transfer-progress -pl '!eclipse_plugin' -P sonatype-central-release clean deploy"
 
       - name: Build Eclipse plugin
         env:
