@@ -51,8 +51,13 @@ intellijPlatform {
   }
 
   publishing {
-    val jetbrainsPluginRepoToken: String by project
-    token.set(jetbrainsPluginRepoToken)
+    token.set("${System.getenv("JETBRAINS_TOKEN")}")
+  }
+
+  signing {
+    privateKey = "${System.getenv("JETBRAINS_PRIVATE_KEY")}"
+    password = "${System.getenv("JETBRAINS_PASSWORD")}"
+    certificateChain = "${System.getenv("JETBRAINS_CERTIFICATE_CHAIN")}"
   }
 }
 

@@ -72,6 +72,19 @@ jobs:
         run: |
           git push origin "v${{ github.event.inputs.version }}"
 
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@v4
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Publish Idea plugin
+        env:
+          JETBRAINS_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
+          JETBRAINS_PRIVATE_KEY: ${{ secrets.JETBRAINS_PRIVATE_KEY }}
+          JETBRAINS_CERTIFICATE_CHAIN: ${{ secrets.JETBRAINS_CERTIFICATE_CHAIN }}
+        run: ./gradlew -p idea_plugin --no-daemon publishPlugin
+
       - name: Add Artifacts to Release Entry
         uses: softprops/action-gh-release@v0.1.14
         with:

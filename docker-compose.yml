@@ -57,4 +57,4 @@ services:
     command:
       - |
         [ -z "$$WOOWACOURSE_LOCAL_VERSION" ] && { echo "Need to set WOOWACOURSE_LOCAL_VERSION"; exit 1; }
-        gradle clean buildPlugin
+        gradle --no-daemon clean buildPlugin
