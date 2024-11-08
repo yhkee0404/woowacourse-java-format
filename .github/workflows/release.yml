@@ -88,6 +88,7 @@ jobs:
       - name: Publish Idea plugin
         env:
           WOOWACOURSE_LOCAL_VERSION: ${{ github.event.inputs.version }}
+          JETBRAINS_TOKEN: ${{ secrets.JETBRAINS_TOKEN }}
           JETBRAINS_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
           JETBRAINS_PRIVATE_KEY: ${{ secrets.JETBRAINS_PRIVATE_KEY }}
           JETBRAINS_CERTIFICATE_CHAIN: ${{ secrets.JETBRAINS_CERTIFICATE_CHAIN }}
