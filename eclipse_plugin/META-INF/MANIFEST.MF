@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: woowacourse-java-format
 Bundle-SymbolicName: woowacourse-java-format-eclipse-plugin;singleton:=true
 Bundle-Vendor: The Woowacourse Java Format Authors
-Bundle-Version: 1.24.0.0_WOOWACOURSE
+Bundle-Version: 1.24.0.4_WOOWACOURSE
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.jdt.core;bundle-version="3.10.0",
  org.eclipse.jface,
