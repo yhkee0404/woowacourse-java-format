@@ -66,7 +66,7 @@ jobs:
       - name: Build Eclipse plugin
         env:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: mvn --no-transfer-progress -pl 'eclipse_plugin' verify gpg:sign -DskipTests=true"
+        run: mvn --no-transfer-progress -pl 'eclipse_plugin' verify gpg:sign -DskipTests=true
 
       - name: Push tag
         run: |
