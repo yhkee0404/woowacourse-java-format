@@ -72,11 +72,11 @@ jobs:
         run: |
           git push origin "v${{ github.event.inputs.version }}"
 
-      - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@v4
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@v4
 
       - name: Publish Idea plugin
         env:
