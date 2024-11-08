@@ -91,6 +91,7 @@ dependencies {
     bundledPlugin("com.intellij.java")
     instrumentationTools()
     testFramework(TestFrameworkType.Plugin.Java)
+    zipSigner()
   }
   implementation("io.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
   // https://mvnrepository.com/artifact/junit/junit
