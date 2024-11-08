@@ -51,7 +51,8 @@ jobs:
           git ls-files | grep -E '(pom.xml|MANIFEST.MF)$' | xargs git add
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git config --global user.name "${{ github.actor }}"
-          git commit -m "Release woowacourse-java-format ${{ github.event.inputs.version }}"
+          # ignore commit failure by Dr. Jan-Philip Gehrcke from https://stackoverflow.com/a/66691691
+          git commit -m "Release woowacourse-java-format ${{ github.event.inputs.version }}" || echo "ignore commit failure, proceed"
           git tag "v${{ github.event.inputs.version }}"
           echo "TARGET_COMMITISH=$(git rev-parse HEAD)" >> $GITHUB_ENV
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/yhkee0404/woowacourse-java-format.git
