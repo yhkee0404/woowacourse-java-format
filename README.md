@@ -36,8 +36,6 @@
 
 `Reformat Code` 그리고 `Optimize Imports`와 연동할 수 있습니다.
 
-문자열 상수의 열 제한 초과를 방지하는 Reflow 기능이 빠져 있습니다. 추가 예정입니다: google/google-java-format#566
-
 #### IntelliJ JRE Config
 
 설치하기에 앞서 `Help > Edit Custom VM Options...`에서 다음을 입력하고 저장해 주세요:

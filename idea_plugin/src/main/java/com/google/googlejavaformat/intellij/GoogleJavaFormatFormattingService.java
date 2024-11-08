@@ -102,6 +102,7 @@ public class GoogleJavaFormatFormattingService extends AsyncDocumentFormattingSe
     public void run() {
       try {
         String formattedText = formatter.formatSource(request.getDocumentText(), toRanges(request));
+        formattedText = StringWrapper.wrap(Formatter.MAX_LINE_LENGTH, formattedText, formatter);
         request.onTextReady(formattedText);
       } catch (FormatterException e) {
         request.onError(
