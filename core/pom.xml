@@ -21,7 +21,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.github.yhkee0404.woowacoursejavaformat</groupId>
+    <groupId>io.github.yhkee0404.woowacoursejavaformat</groupId>
     <artifactId>woowacourse-java-format-parent</artifactId>
   <version>1.24.0.0_WOOWACOURSE</version>
   </parent>
@@ -103,12 +103,12 @@
             <link>https://docs.oracle.com/en/java/javase/11/docs/api</link>
           </links>
           <additionalJOptions>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
-            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED,com.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED,io.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED,io.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED,io.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED,io.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED,io.github.yhkee0404.woowacoursejavaformat</additionalJOption>
+            <additionalJOption>--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED,io.github.yhkee0404.woowacoursejavaformat</additionalJOption>
           </additionalJOptions>
         </configuration>
         <executions>
@@ -164,7 +164,7 @@
             </manifest>
             <manifestEntries>
               <Automatic-Module-Name>
-                com.github.yhkee0404.woowacoursejavaformat
+                io.github.yhkee0404.woowacoursejavaformat
               </Automatic-Module-Name>
             </manifestEntries>
           </archive>

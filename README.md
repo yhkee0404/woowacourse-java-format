@@ -172,7 +172,7 @@ new Formatter().formatSource(source, output);
 ```xml
   <dependencies>
     <dependency>
-      <groupId>com.github.yhkee0404.woowacoursejavaformat</groupId>
+      <groupId>io.github.yhkee0404.woowacoursejavaformat</groupId>
       <artifactId>woowacourse-java-format</artifactId>
       <version>${project.version}</version>
     </dependency>
@@ -196,7 +196,7 @@ new Formatter().formatSource(source, output);
 
 ```kotlin
 dependencies {
-  implementation("com.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
+  implementation("io.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
 }
 
 repositories {

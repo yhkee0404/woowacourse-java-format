@@ -87,7 +87,7 @@ dependencies {
     instrumentationTools()
     testFramework(TestFrameworkType.Plugin.Java)
   }
-  implementation("com.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
+  implementation("io.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
   // https://mvnrepository.com/artifact/junit/junit
   testImplementation("junit:junit:4.13.2")
   // https://mvnrepository.com/artifact/com.google.truth/truth
