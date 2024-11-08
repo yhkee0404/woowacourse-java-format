@@ -24,7 +24,7 @@
   <groupId>io.github.yhkee0404.woowacoursejavaformat</groupId>
   <artifactId>woowacourse-java-format-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.24.0.0_WOOWACOURSE</version>
+  <version>1.24.0.1_WOOWACOURSE</version>
 
   <modules>
     <module>core</module>
