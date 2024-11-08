@@ -33,8 +33,7 @@ repositories {
   }
 }
 
-// https://github.com/yhkee0404/woowacourse-java-format/releases
-val googleJavaFormatVersion = "1.24.0.0_WOOWACOURSE"
+val googleJavaFormatVersion = "${System.getenv("WOOWACOURSE_LOCAL_VERSION")}"
 
 java {
   sourceCompatibility = JavaVersion.VERSION_17
