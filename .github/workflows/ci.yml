@@ -18,10 +18,10 @@ name: CI
 on:
   push:
     branches:
-      - fix-ci
+      - main
   pull_request:
     branches:
-      - fix-ci
+      - main
 
 jobs:
   test-OpenJDK:
