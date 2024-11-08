@@ -19,6 +19,7 @@ mvn tycho-versions:update-eclipse-metadata
 
 ### Building the Plugin
 
-더 자세한 내용은 [원문 안내][]를 참고하세요.
+[빌드해 보기][]를 따릅니다. 더 자세한 내용은 [원문 안내][]를 참고하세요.
 
+[빌드해 보기]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/README.md#빌드해-보기
 [원문 안내]: https://github.com/google/google-java-format/blob/master/eclipse_plugin/README.md

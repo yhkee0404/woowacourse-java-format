@@ -18,10 +18,10 @@ name: CI
 on:
   push:
     branches:
-      - fix-ci
+      - main
   pull_request:
     branches:
-      - fix-ci
+      - main
 
 jobs:
   test-OpenJDK:
@@ -68,10 +68,10 @@ jobs:
           cache: "maven"
       - name: "Install"
         shell: bash
-        run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+        run: mvn --no-transfer-progress -DskipTests=true -Dmaven.javadoc.skip=true -B -V install
       - name: "Test"
         shell: bash
-        run: mvn test -B
+        run: mvn -B surefire:test
 
   test-GraalVM:
     name: "GraalVM on ${{ matrix.os }}"
@@ -100,7 +100,7 @@ jobs:
           native-image-job-reports: "true"
           cache: "maven"
       - name: "Native Build"
-        run: mvn -Pnative -DskipTests package -pl core -am
+        run: mvn -pl core -am --no-transfer-progress -Pnative -DskipTests package
       - name: "Native Test"
         # Bash script for testing won't work on Windows
         # TODO: Anyone reading this wants to write a *.bat or *.ps1 equivalent?
@@ -128,4 +128,6 @@ jobs:
         env:
           CI_DEPLOY_USERNAME: ${{ secrets.CI_DEPLOY_USERNAME }}
           CI_DEPLOY_PASSWORD: ${{ secrets.CI_DEPLOY_PASSWORD }}
-        run: mvn -pl '!eclipse_plugin' source:jar deploy -B -DskipTests=true -Dinvoker.skip=true -Dmaven.javadoc.skip=true
+        run: |
+          mvn --no-transfer-progress versions:set versions:commit -DnewVersion="HEAD-SNAPSHOT"
+          mvn -pl '!eclipse_plugin' --no-transfer-progress -B -DskipTests=true -Dinvoker.skip=true -Dmaven.javadoc.skip=true source:jar deploy

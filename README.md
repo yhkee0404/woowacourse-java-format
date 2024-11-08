@@ -216,18 +216,28 @@ core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-javadoc.jar
 core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-sources.jar
 core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE.jar
 eclipse_plugin/target/woowacourse-java-format-eclipse-plugin-1.24.0.0_WOOWACOURSE.jar
-idea_plugin/build/distributions/idea_plugin.zip
+idea_plugin/build/distributions/project.zip
 ```
 
-[docker-compose.yml][] 파일을 참고하세요:
+[docker-compose.yml][] 파일이 요구하는 WOOWACOURSE_LOCAL_VERSION을 입력해 주세요:
 
 [docker-compose.yml]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/docker-compose.yml
 
 ```zsh
-docker compose up -d core
+WOOWACOURSE_LOCAL_VERSION=1.24.0.0_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d core
 ```
 
-core 빌드를 마치면 idea_plugin도 빌드할 수 있습니다. idea_plugin 빌드 시 알려진 오류가 발생해 [해결책](https://youtrack.jetbrains.com/issue/JBR-1550/EXCEPTIONACCESSVIOLATION-in-sun.awt.windows.ThemeReader.getThemeMargins-building-a-plugin-with-OpenJDK-JBRE-for-IntelliJ-EAP#focus=Comments-27-3515408.0-0)을 파악 중이지만 결국 빌드는 성공하고 사용에 문제는 없으니 일단 무시해 주세요: JetBrains/intellij-platform-gradle-plugin#1513
+core 빌드를 마치면 동일한 WOOWACOURSE_LOCAL_VERSION으로 eclipse_plugin과 idea_plugin도 빌드할 수 있습니다.
+
+```zsh
+WOOWACOURSE_LOCAL_VERSION=1.24.0.0_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d eclipse_plugin
+```
+
+```zsh
+WOOWACOURSE_LOCAL_VERSION=1.24.0.0_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d idea_plugin
+```
+
+idea_plugin 빌드 시 알려진 오류가 발생해 [해결책](https://youtrack.jetbrains.com/issue/JBR-1550/EXCEPTIONACCESSVIOLATION-in-sun.awt.windows.ThemeReader.getThemeMargins-building-a-plugin-with-OpenJDK-JBRE-for-IntelliJ-EAP#focus=Comments-27-3515408.0-0)을 파악 중이지만 결국 빌드는 성공하고 사용에 문제는 없으니 일단 무시해 주세요: JetBrains/intellij-platform-gradle-plugin#1513
 
 ```zsh
 > Task :buildSearchableOptions
@@ -235,11 +245,7 @@ CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDesce
 java.lang.Error: no ComponentUI class for: com.intellij.util.ui.tree.PerFileConfigurableBase$PerFileConfigurableComboBoxAction$1[,0,0,0x0,invalid,alignmentX=0.0,alignmentY=0.0,border=,flags=0,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=null,paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=false,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=,defaultCapable=true]
 ```
 
-그런데 core 빌드와 달리 idea_plugin 빌드는 Docker 환경 대신 로컬 환경의 IntelliJ에서 해 보시기 바랍니다. Docker 빌드 시 작동하지 않아 원인을 파악 중입니다:
-
-![IntelliJ > IDE Internal Errors](screenshots/intellij-ide-internal-errors.png)
-
-빌드한 `idea_plugin.zip` 파일을 `File > Settings > Plugins > Install Plugin from Disk...`에서 선택하면 설치됩니다:
+빌드한 `project.zip` 파일을 `File > Settings > Plugins > Install Plugin from Disk...`에서 선택하면 설치됩니다:
 
 ![IntelliJ > File > Settings > Plugins > Install Plugin from Disk...](screenshots/intellij-install-local.png)
 

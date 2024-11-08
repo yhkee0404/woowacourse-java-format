@@ -2,6 +2,10 @@ services:
 
   core:
     image: "maven:3.8.8-eclipse-temurin-21-alpine"
+    user: "${UID}:${GID}"
+    environment:
+      - WOOWACOURSE_LOCAL_VERSION=$WOOWACOURSE_LOCAL_VERSION
+      - MAVEN_CONFIG=/usr/src/mymaven/.m2
     volumes:
       - .:/usr/src/mymaven
     working_dir: /usr/src/mymaven
@@ -10,10 +14,39 @@ services:
       - -c
     command:
       - |
-        mvn clean install
+        alias mvn='mvn -Duser.home=$$PWD'
+        [ -z "$$WOOWACOURSE_LOCAL_VERSION" ] && { echo "Need to set WOOWACOURSE_LOCAL_VERSION"; exit 1; }
+        mvn -pl core -am --no-transfer-progress versions:set -DnewVersion="$$WOOWACOURSE_LOCAL_VERSION"
+        mvn -pl core -am --no-transfer-progress clean install
+        mvn --no-transfer-progress versions:revert
+  
+  eclipse_plugin:
+    image: "maven:3.8.8-eclipse-temurin-21-alpine"
+    user: "${UID}:${GID}"
+    environment:
+      - WOOWACOURSE_LOCAL_VERSION=$WOOWACOURSE_LOCAL_VERSION
+      - MAVEN_CONFIG=/usr/src/mymaven/.m2
+    volumes:
+      - .:/usr/src/mymaven
+    working_dir: /usr/src/mymaven
+    entrypoint:
+      - sh
+      - -c
+    command:
+      - |
+        alias mvn='mvn -Duser.home=$$PWD'
+        [ -z "$$WOOWACOURSE_LOCAL_VERSION" ] && { echo "Need to set WOOWACOURSE_LOCAL_VERSION"; exit 1; }
+        mvn --no-transfer-progress versions:set -DnewVersion="$$WOOWACOURSE_LOCAL_VERSION"
+        mvn -pl eclipse_plugin --no-transfer-progress versions:set -DnewVersion="$$WOOWACOURSE_LOCAL_VERSION"
+        mvn -pl eclipse_plugin --no-transfer-progress tycho-versions:update-eclipse-metadata
+        mvn -pl eclipse_plugin --no-transfer-progress clean install
+        mvn --no-transfer-progress versions:revert
 
   idea_plugin:
     image: "gradle:8.10.2-jdk17"
+    user: "${UID}:${GID}"
+    environment:
+      - WOOWACOURSE_LOCAL_VERSION=$WOOWACOURSE_LOCAL_VERSION
     volumes:
       - ./idea_plugin:/home/gradle/project
       - ./core:/home/gradle/core
@@ -23,5 +56,5 @@ services:
       - -c
     command:
       - |
-        gradle clean
-        gradle buildPlugin
+        [ -z "$$WOOWACOURSE_LOCAL_VERSION" ] && { echo "Need to set WOOWACOURSE_LOCAL_VERSION"; exit 1; }
+        gradle clean buildPlugin
