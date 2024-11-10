@@ -7,7 +7,5 @@ class B21105569 {
         /* asd */
     }
 
-    void h() {
-        /* asd */
-    }
+    void h() { /* asd */ }
 }

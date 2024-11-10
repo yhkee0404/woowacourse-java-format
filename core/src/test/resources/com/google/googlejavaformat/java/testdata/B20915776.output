@@ -5,5 +5,6 @@ class B20915776 {
             @Parent DatasetSource supporters,
             @Child DatasetSource children,
             @Parent Provider<SupportsDecider> parentSupportsDecider,
-            @Child Provider<SupportsDecider> childSupportsDecider) {}
+            @Child Provider<SupportsDecider> childSupportsDecider) {
+    }
 }

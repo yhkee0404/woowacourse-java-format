@@ -1,9 +1,8 @@
 class B20701054 {
     void m() {
         ImmutableList<String> x = ImmutableList.builder().add(1).build();
-        OptionalOptionalOptionalBinder.<ASD>newOptionalBinder(binder(), InputAllowlist.class)
-                .setBinding()
-                .to(AllInputAllowlist.class);
+        OptionalOptionalOptionalBinder.<ASD>newOptionalBinder(binder(), InputAllowlist.class).setBinding().to(
+                AllInputAllowlist.class);
 
         Foo z = Foo.INSTANCE.field;
         Foo z = Foo.INSTANCE.field.field;
@@ -21,8 +20,8 @@ class B20701054 {
         ImmutableList<String> x = ImmutableList.builder().add(1).add(2).add(3).build();
         ImmutableList<String> x = ImmutableList.builder().add(1).add(2).add(3).add(4).build();
         ImmutableList<String> x = ImmutableList.builder().add(1).add(2).add(3).add(4).add(5).build();
-        ImmutableList<String> x =
-                ImmutableList.builder().add(1).add(2).add(3).add(4).add(5).add(6).add(78).add(90).build();
+        ImmutableList<String> x = ImmutableList.builder().add(1).add(2).add(3).add(4).add(5).add(6).add(78).add(90)
+                .build();
 
         ImmutableList<String> x =
                 new ImmutableList.Builder<>()
@@ -52,50 +51,48 @@ class B20701054 {
                         .add(xxxxx)
                         .build();
 
-        System.err.println(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+        System.err.println(
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
         Class.my.contrived.example.function(
                 veryLongArgumentxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
         PTable<Long, List<PageSpeedUrlResult>> latestResults =
-                FJ.joinOneShot2(accountSummaryProvider.get(), results)
-                        .parallelDo("extractPageSpeedUrls", new ExtractPageSpeedUrlsFn(false));
+                FJ.joinOneShot2(accountSummaryProvider.get(), results).parallelDo(
+                        "extractPageSpeedUrls", new ExtractPageSpeedUrlsFn(false));
 
         PTable<Long, Long> adImpressionsByAccount =
-                impressionExtractor
-                        .getImpressionBreakdownByAccountId()
-                        .parallelDo("rekeyAdImpressionsByAccountId", new ExtractTotalImpressionsFn());
+                impressionExtractor.getImpressionBreakdownByAccountId().parallelDo(
+                        "rekeyAdImpressionsByAccountId", new ExtractTotalImpressionsFn());
 
         PTable<String, CrawlError> crawlerErrorsByCode =
-                crawlReportSource
-                        .read("readCrawlReportTable")
-                        .parallelDo("reKeyErrorsByPropertyCode", new RekeyErrorsByPropertyCodeFn());
+                crawlReportSource.read("readCrawlReportTable").parallelDo(
+                        "reKeyErrorsByPropertyCode", new RekeyErrorsByPropertyCodeFn());
 
-        if (ImmutableList.builder().add(1).add(2).add(3)) {}
+        if (ImmutableList.builder().add(1).add(2).add(3)) {
+        }
 
-        if (ImmutableList.builder().add(1).add(2).add(3).add(4)) {}
+        if (ImmutableList.builder()
+                .add(1)
+                .add(2)
+                .add(3)
+                .add(4)) {
+        }
 
-        if (value.fst.name.toString().equals("value")) {}
+        if (value.fst.name.toString().equals("value")) {
+        }
 
-        analysis()
-                .analyze(
-                        compilationUnit,
-                        context,
-                        configuration,
-                        new DescriptionListener() {
-                            @Override
-                            public void onDescribed(Description description) {
-                                listener.onDescribed(
-                                        description.filterFixes(
-                                                new Predicate<Fix>() {
-                                                    @Override
-                                                    public boolean apply(Fix fix) {
-                                                        return compiles(
-                                                                fix, (JCCompilationUnit) compilationUnit, context);
-                                                    }
-                                                }));
-                            }
-                        });
+        analysis().analyze(compilationUnit, context, configuration, new DescriptionListener() {
+            @Override
+            public void onDescribed(Description description) {
+                listener.onDescribed(description.filterFixes(new Predicate<Fix>() {
+                    @Override
+                    public boolean apply(Fix fix) {
+                        return compiles(fix, (JCCompilationUnit) compilationUnit, context);
+                    }
+                }));
+            }
+        });
 
         (test ? xxx : yyy).zzz(xxx);
 
@@ -104,8 +101,8 @@ class B20701054 {
                         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
         (test
-                        ? xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                        : yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy)
+                ? xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                : yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy)
                 .zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz(
                         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
@@ -115,32 +112,28 @@ class B20701054 {
         zzzzzzzzzzzzzzzzzzzz.zzzzzzzzzzzzzzzzzzzzzzzzzzz.zzzzzzzzzzzzzzzzzzzzzzzzzzzzz(
                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
-        field.field.field.field.field.field.field.field.field.field.field.field.field.field.field.field.field.field
-                .field.field.field.method(
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+        field.field.field.field.field.field.field.field.field.field.field.field.field.field.field.field
+                .field.field.field.field.field.method(
+                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
         (test
-                        ? xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                        : yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy)
+                ? xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                : yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy)
                 .field.field.field.field.field.field.field.field.field.field.field.field.field.method(
                         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
         (test
-                        ? xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                        : yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy)
-                .field.field.field.field.field.field.field.field.field.field.field.field.field.field.field.field.field
-                        .field.field.field.field.method(
+                ? xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                : yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy)
+                .field.field.field.field.field.field.field.field.field.field.field.field.field.field.field
+                .field.field.field.field.field.field.method(
                         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
         field.field.field.field.field.field.method(
                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
-        field.field
-                .field
-                .field
-                .field
-                .field
-                .method(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+        field.field.field.field.field.field.method(
+                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
                 .yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
                 .yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
                 .yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
@@ -152,32 +145,42 @@ class B20701054 {
 
         edu.oswego.cs.dl.util.concurrent.misc.ImmutableList.builder(
                         zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
-                .zzzzzzz(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
-                .zzzzzzz(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
-                .zzzzzzz(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz);
+                .zzzzzzz(
+                        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
+                .zzzzzzz(
+                        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
+                .zzzzzzz(
+                        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz);
 
-        edu.oswego.cs.dl.util.concurrent.misc.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.ImmutableList
-                .builder(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
-                .zzzzzzz(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
-                .zzzzzzz(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
-                .zzzzzzz(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz);
+        edu.oswego.cs.dl.util.concurrent.misc.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+                .ImmutableList.builder(
+                        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
+                .zzzzzzz(
+                        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
+                .zzzzzzz(
+                        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
+                .zzzzzzz(
+                        zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz);
 
         int u =
-                edu.oswego.cs.dl.util.concurrent.misc.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.ImmutableList
-                        .builder(zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
+                edu.oswego.cs.dl.util.concurrent.misc.zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+                        .ImmutableList.builder(
+                                zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz)
                         .zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
                         .zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
                         .zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
                         .zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz;
 
-        for (String configured : errorProneOptions().getSeverityMap().keySet()) {}
+        for (String configured : errorProneOptions().getSeverityMap().keySet()) {
+        }
 
         return fffffffffff(
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
 
         return fffffffffff(
-                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,
-                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
                 .fffffffffffff(
                         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx,
                         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);

@@ -8,7 +8,8 @@ class T<T1, T2, T3> {
     // TODO(user): Add tests for higher language levels.
 
     T f(int x) throws Exception {
-        class TT {}
+        class TT {
+        }
         if (x == 0 || T.class == null) {
             return this;
         }

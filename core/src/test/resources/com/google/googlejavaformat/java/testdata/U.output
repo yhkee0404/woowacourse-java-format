@@ -1,18 +1,30 @@
 package com.google.googlejavaformat.java.test;
 
-/** Tests for UnionTypes. */
+/**
+ * Tests for UnionTypes.
+ */
 class U {
     void f() {
-        class Exception0 extends Exception {}
-        class Exception1 extends Exception {}
-        class Exception2 extends Exception {}
-        class Exception3 extends Exception {}
-        class Exception4 extends Exception {}
-        class Exception5 extends Exception {}
-        class Exception6 extends Exception {}
-        class Exception7 extends Exception {}
-        class Exception8 extends Exception {}
-        class Exception9 extends Exception {}
+        class Exception0 extends Exception {
+        }
+        class Exception1 extends Exception {
+        }
+        class Exception2 extends Exception {
+        }
+        class Exception3 extends Exception {
+        }
+        class Exception4 extends Exception {
+        }
+        class Exception5 extends Exception {
+        }
+        class Exception6 extends Exception {
+        }
+        class Exception7 extends Exception {
+        }
+        class Exception8 extends Exception {
+        }
+        class Exception9 extends Exception {
+        }
         try {
             char c = '\123';
             switch (c) {
@@ -38,16 +50,10 @@ class U {
                 default:
                     throw new Exception9();
             }
-        } catch (Exception0
-                | Exception1
-                | Exception2
-                | Exception3
-                | Exception4
-                | Exception5
-                | Exception6
-                | Exception7
-                | Exception8
-                | Exception9 e) {
+        } catch (
+                Exception0 | Exception1 | Exception2 | Exception3 | Exception4 | Exception5 | Exception6
+                | Exception7 | Exception8 | Exception9
+                        e) {
         }
     }
 }

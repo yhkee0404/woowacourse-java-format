@@ -8,7 +8,8 @@ class Multivariables {
 
     {
         {
-            for (c = cx.iterator(), m = mx.iterator(); c.hasNext() && m.hasNext(); ) {
+            for (c = cx.iterator(), m = mx.iterator();
+                 c.hasNext() && m.hasNext(); ) {
                 f(c, m);
             }
         }

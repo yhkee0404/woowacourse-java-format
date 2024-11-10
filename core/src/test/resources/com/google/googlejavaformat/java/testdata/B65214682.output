@@ -3,7 +3,8 @@
         summary = SIMPLIFY,
         category = GUAVA,
         severity = NOT_A_PROBLEM,
-        maturity = EXPERIMENTAL)
+        maturity = EXPERIMENTAL
+)
 @BugPattern(
         name = "AsyncFunctionReturnsImmediate",
         summary = SIMPLIFY,
@@ -13,4 +14,5 @@
         category = GUAVA,
         severity = NOT_A_PROBLEM,
         maturity = EXPERIMENTAL)
-class Test {}
+class Test {
+}

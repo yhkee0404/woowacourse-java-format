@@ -1,8 +1,5 @@
 /**
- * This<br>
- * is<br>
- * a<br>
- * train.
+ * This<br> is<br> a<br> train.
  */
 class TheTrain {
     /*
@@ -37,15 +34,15 @@ class TheTrain {
     int y;
 
     /*    .
-    BLOCK COMMENT   .
+BLOCK COMMENT   .
 
-    */
+*/
     int z;
 
     /*      .
-    BLOCK COMMENT     .
+BLOCK COMMENT     .
 
-    */
+*/
     int z;
 
     /*
@@ -56,7 +53,6 @@ class TheTrain {
 
     /**
      * This is (was) malformed javadoc.
-     *
      * <pre>
      * System.err.println
      * </pre>

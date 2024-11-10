@@ -1,4 +1,6 @@
 class B35797074 {
-    /** javadoc */
+    /**
+     * javadoc
+     */
     /* package */ final int x;
 }

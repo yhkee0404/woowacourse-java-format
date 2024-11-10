@@ -6,7 +6,7 @@ class B23804934 {
             ZzzzzzzZzzzzzzz<ZzzzzzZzzzZzzz> zzzzzzZzzzZzzzZzzzzzzz,
             @ZzzzZzzzzZzzzzzz Zzzzzz zzzzzZzzzzzz,
             @ZzzzzzzzzzzZzzzzzz(Zz.ZZZZZZZ_ZZZZZ_ZZZZ_ZZZZZZ_ZZZZ_ZZZZZZZZZZ)
-                    Zzzzzzzz<Zzzzzzz> zzzzzZzzzZzzzzzZzzzZzzzzzzzzz) {
+            Zzzzzzzz<Zzzzzzz> zzzzzZzzzZzzzzzZzzzZzzzzzzzzz) {
         zzzz.zzzzzzzzZzzzzzZzzzzZzzzzzzz = zzzzzzzzZzzzzzZzzzzZzzzzzzz;
         zzzz.zzzzzzZzzzZzzzZzzzzzzz = zzzzzzZzzzZzzzZzzzzzzz;
         zzzz.zzzzzZzzzzzz = zzzzzZzzzzzz;
@@ -16,20 +16,22 @@ class B23804934 {
     zzzz z(
             zzz z,
             @Zzzzzzzz @Zzzzzzzzzz
-                    ZzzzzzzzzZzzz<ZzzzzzZzzzzzzzzz>
-                            zzzzZzzzZzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz) {}
+            ZzzzzzzzzZzzz<ZzzzzzZzzzzzzzzz>
+                    zzzzZzzzZzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz) {
+    }
 
     @ZzzZzzzZzzzzzzzzzz
     @Zzzzzzzz(zzzzzzzzz = Zzzzzzzzz.ZZ)
     ZzzzzzzzzzZzzzzz<ZzzZzzzzzzzzzzZzzzzzzzz> zzzzzzzZzzzzzzzzzz(
             @Zzz @Zzz zzzz zzzzZzzzZz,
             @Zzz @ZzzzzzzzzzZzzzzZzzzzzzzzzZzzz(zzzz = ZzzzzZzzzzzZzzzz.ZZZZZZ_ZZZ_ZZZ_ZZZZZZZ)
-                    zzzzzzz zzzzzzZzzZzzZzzzzzz,
+            zzzzzzz zzzzzzZzzZzzZzzzzzz,
             @Zzzzz @ZzzzzzzzzzZzzzzZzzzzzzzzzZzzz(zzzz = ZzzzzZzzzzzZzzzz.ZZZZZ_ZZZ_ZZZZZZZZZZZ)
-                    zzzzzzz zzzzzZzzZzzzzzzzzzz,
-            @Zzzzz ZzzzzZzzz zzzzzZzzz) {}
+            zzzzzzz zzzzzZzzZzzzzzzzzzz,
+            @Zzzzz ZzzzzZzzz zzzzzZzzz) {
+    }
 
     void fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(
-            final ZzzzzzzzzzzzzZzzzzzzzzzzzzzz
-                    zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz) {}
+            final ZzzzzzzzzzzzzZzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz) {
+    }
 }

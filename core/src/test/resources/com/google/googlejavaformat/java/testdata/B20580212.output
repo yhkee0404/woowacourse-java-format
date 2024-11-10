@@ -9,12 +9,9 @@ class B20580212 {
                         0 /* recipientScoreDelta */);
 
         try {
-        } catch (IllegalStateException e) {
-            /* expected */
-        }
+        } catch (IllegalStateException e) { /* expected */ }
     }
 
-    static class ThrowsAtEndException extends RuntimeException {
-        /* nothing */
+    static class ThrowsAtEndException extends RuntimeException { /* nothing */
     }
 }
