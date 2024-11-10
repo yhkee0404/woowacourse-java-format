@@ -1,6 +1,6 @@
 # woowacourse-java-format
 
-> ***New:*** Pull Request 전 체크리스트 항목 중 [코드 한 줄에 점(.)을 하나만 허용했는가?][] 지원 기능을 추가했습니다! [v1.24.0.14_WOOWACOURSE][]부터 적용되고 Expression 단위로 두 번째 점(.)부터 줄 바꿈을 강제합니다.  
+> ***New:*** [Pull Request 전 체크리스트][] 항목 중 "코드 한 줄에 점(.)을 하나만 허용했는가?" 지원 기능을 추가했습니다! [v1.24.0.14_WOOWACOURSE][]부터 적용되고 Expression 단위로 두 번째 점(.)부터 줄 바꿈을 강제합니다.  
 > [Jetbrains Marketplace][]보다 [다운로드][v1.24.0.14_WOOWACOURSE]에 먼저 배포됩니다. [intellij-java-google-style.xml][]의 테스트 결과와 비교하며 [코드 리뷰][]를 해 주세요!
 > 
 > ### 코드 한 줄에 점(.)을 하나만 허용했는가?
@@ -8,7 +8,7 @@
 > * 예를 들어 location.current.representation.substring(0, 1)와 같이 여러 개의 점(.)이 등장하면 리팩토링할 부분을 찾아본다.
 
 [v1.24.0.14_WOOWACOURSE]: https://github.com/yhkee0404/woowacourse-java-format/releases/tag/v1.24.0.14_WOOWACOURSE
-[코드 한 줄에 점(.)을 하나만 허용했는가?]: https://github.com/woowacourse/woowacourse-docs/blob/main/cleancode/pr_checklist.md#%EC%BD%94%EB%93%9C-%ED%95%9C-%EC%A4%84%EC%97%90-%EC%A0%90%EC%9D%84-%ED%95%98%EB%82%98%EB%A7%8C-%ED%97%88%EC%9A%A9%ED%96%88%EB%8A%94%EA%B0%80
+[Pull Request 전 체크리스트]: https://github.com/woowacourse/woowacourse-docs/blob/main/cleancode/pr_checklist.md
 [코드 리뷰]: https://github.com/yhkee0404/woowacourse-java-format/compare/1b55c7e731d88cab41141227f27589a14f320756..test-resources-intellij-wooteco-xml-java-imports-and-formatting
 
 `woowacourse-java-format`은 [google-java-format][]을 수정한 프로그램입니다. Java 소스 코드를 우아한테크코스의 [Java Style Guide][]에 맞게 포매팅합니다.
