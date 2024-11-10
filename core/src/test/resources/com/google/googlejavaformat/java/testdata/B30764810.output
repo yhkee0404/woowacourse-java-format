@@ -3,7 +3,7 @@ class B30764810 {
             x = {0},
             y = 0
             // comment
-            )
+    )
     int a;
 
     @Foo(
@@ -11,6 +11,6 @@ class B30764810 {
             y = 0
             /* comment
              */
-            )
+    )
     int b;
 }

@@ -2,7 +2,8 @@
  * Foo.
  *
  * <ul>
- *     <li>a
+ *     <li> a
  * </ul>
  */
-class Foo {}
+class Foo {
+}

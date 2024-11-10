@@ -9,14 +9,14 @@ class B33358723 {
         f(
                 //
                 ( //
-                        x) ->
+                  x) ->
                         System.err.println(
                                 //
                                 "hello"));
         f(
                 //
                 (int //
-                                x) ->
+                         x) ->
                         System.err.println(
                                 //
                                 "hello"));

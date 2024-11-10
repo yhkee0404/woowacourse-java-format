@@ -2,49 +2,48 @@ class Test {
     final CreationMechanism creationMechanism;
     final @Nullable String creationUserAgent;
     final ClientId clientId;
-    final @Nullable String
-            creationUserAgentUserAgentUserAgentXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
+    final @Nullable String creationUserAgentUserAgentUserAgentXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
     final Token externalId;
 
     {
         final CreationMechanism creationMechanism;
         final @Nullable String creationUserAgent;
         final ClientId clientId;
-        final @Nullable String
-                creationUserUserUserUserUserAgentXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
+        final @Nullable String creationUserUserUserUserUserAgentXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
         final Token externalId;
     }
 }
 
 class Test {
     final CreationMechanism creationMechanism;
-    @Nullable final String creationUserAgent;
+    @Nullable
+    final String creationUserAgent;
     final ClientId clientId;
-
     @Nullable
     final String creationUserAgentUserAgentUserAgentXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
-
     final Token externalId;
 
     {
         final CreationMechanism creationMechanism;
         @Nullable final String creationUserAgent;
         final ClientId clientId;
-        @Nullable
-        final String creationUserUserUserUserUserAgentXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
+        @Nullable final String creationUserUserUserUserUserAgentXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
         final Token externalId;
     }
 }
 
 class Test {
 
-    @Nullable final String creationUserAgent;
+    @Nullable
+    final String creationUserAgent;
 
     {
         @Nullable final String creationUserAgent;
     }
 
     {
+
         @Nullable final String creationUserAgent;
+
     }
 }

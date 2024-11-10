@@ -1,27 +1,34 @@
 class B23749160 {
     {
-        mockDailySummaryModuleListFiller.buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDayxxxxxxxxxxx(
-                anyInt(), anyInt(), anyInt());
+        mockDailySummaryModuleListFiller
+                .buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDayxxxxxxxxxxx(
+                        anyInt(), anyInt(), anyInt());
 
         mockDailySummaryModuleListFiller
-                .<XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX, YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY>
+                .<XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX,
+                        YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY>
                         buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDayxxxxxxxxxxx(
-                                anyInt(), anyInt(), anyInt());
+                        anyInt(), anyInt(), anyInt());
 
-        foo.<XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX, YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY>
+        foo
+                .<XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX,
+                        YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY>
                         buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDayxxxxxxxxxxx(
-                                anyInt(), anyInt(), anyInt())
+                        anyInt(), anyInt(), anyInt())
                 .bar();
 
         // `.build`... and `anotherThing`... are technically at different syntactic
         // levels, but the indentation required to express that starts to get out
         // of hand
-        MockDailySummaryModuleListFiller.buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDayxxxxxxxxxxx(
+        MockDailySummaryModuleListFiller
+                .buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDayxxxxxxxxxxx(
                         anyInt(), anyInt(), anyInt())
                 .anotherThing();
 
-        when(mockDailySummaryModuleListFiller.buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDay(
-                        anyInt(), anyInt(), anyInt()))
+        when(
+                mockDailySummaryModuleListFiller
+                        .buildDailySummaryModulesWithHeadersOnlyAndOneExpandedDay(
+                                anyInt(), anyInt(), anyInt()))
                 .then();
 
         final List<Integer> XXXXXXXX =
@@ -31,6 +38,6 @@ class B23749160 {
                         XXXXXXX, //
                         XXXXXXX, //
                         XXXXXXX //
-                        );
+                );
     }
 }

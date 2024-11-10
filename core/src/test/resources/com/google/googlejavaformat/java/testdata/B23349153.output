@@ -1,7 +1,6 @@
 class B23349153 {
     enum Foo {
-        A,
-        B,
+        A, B,
         ;
     }
 
@@ -25,6 +24,7 @@ private enum UnsafeAtomicHelperFactory {
             return null;
         }
     },
+
     ;
 
     abstract AtomicHelper tryCreateUnsafeAtomicHelper();

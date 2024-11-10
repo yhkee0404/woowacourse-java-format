@@ -1,6 +1,7 @@
 class B26207047 {
     {
-        String.format("%s                                        ", xxxxxxxxxxxxxxxxxxxx, xxxxxxxxxxxxxxxxxxxx);
+        String.format(
+                "%s                                        ", xxxxxxxxxxxxxxxxxxxx, xxxxxxxxxxxxxxxxxxxx);
         String.format(
                 "%s                                                                           ",
                 xxxxxxxxxxxxxxxxxxxx, xxxxxxxxxxxxxxxxxxxx);
@@ -23,14 +24,13 @@ class B26207047 {
                 xxxxxxxxxxxxxxxxxxxx);
         String.format(
                 "%s                                                                           ",
-                xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx,
-                xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx,
-                xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx);
+                xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx,
+                xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx,
+                xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx, xxxxxx);
         String.format(
-                "%s    ",
-                "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ",
-                "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ",
-                "      ", "      ", "      ", "      ", "      ", "      ");
+                "%s    ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ",
+                "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ",
+                "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ");
         Set<TimeZone> ZONES =
                 ImmutableSet.of(
                         TimeZone.getTimeZone("EST"),
@@ -44,7 +44,6 @@ class B26207047 {
                 xxxxxxxxxxxxxxxxxxxx);
         String.format(
                 "                                                                           ",
-                xxxxxxxxxxxxxxxxxxxx,
-                xxxxxxxxxxxxxxxxxxxx);
+                xxxxxxxxxxxxxxxxxxxx, xxxxxxxxxxxxxxxxxxxx);
     }
 }

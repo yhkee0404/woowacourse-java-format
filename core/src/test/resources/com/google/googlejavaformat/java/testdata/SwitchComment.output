@@ -5,7 +5,7 @@ class T {
                     // this is a line comment about "zero"
                     case "zero" -> 0;
                     case "one" ->
-                            // this is a line comment about "one"
+                        // this is a line comment about "one"
                             1;
                     case "two" -> // this is a line comment about "two"
                             2;

@@ -2,12 +2,14 @@ package com.google.googlejavaformat.java.test;
 
 class Test {
     void m() {
-        if (!metadata.ignoreOutputTransformations() && Producers.isListenableFutureMapKey(outputKey)) {
+        if (!metadata.ignoreOutputTransformations()
+                && Producers.isListenableFutureMapKey(outputKey)) {
             ImmutableList<ProducerNode<?>> nodes = createMapNodes((ProducerNode) node);
             checkCollectionNodesAgainstAllowlist(nodes, allowlist);
             return nodes;
 
-        } else if (!metadata.ignoreOutputTransformations() && Producers.isListenableFutureListKey(outputKey)) {
+        } else if (!metadata.ignoreOutputTransformations()
+                && Producers.isListenableFutureListKey(outputKey)) {
             ImmutableList<ProducerNode<?>> nodes = createListNodes((ProducerNode) node);
             return nodes;
         }
@@ -17,6 +19,7 @@ class Test {
 
             shorts.add(i);
             shorts.remove(i - 1);
+
         }
 
         short i = 0;
@@ -31,6 +34,7 @@ class Test {
         if (true) {
 
             System.err.println("Hi");
+
         }
 
         if (true) {
@@ -40,6 +44,7 @@ class Test {
         } else {
 
             System.err.println("Hi");
+
         }
 
         if (true) {
@@ -53,6 +58,7 @@ class Test {
         } else {
 
             System.err.println("Hi");
+
         }
 
         try {
@@ -62,6 +68,7 @@ class Test {
         } catch (Exception e) {
 
             System.err.println("Hi");
+
         }
 
         try {
@@ -71,6 +78,7 @@ class Test {
         } finally {
 
             System.err.println("Hi");
+
         }
 
         try {
@@ -84,6 +92,7 @@ class Test {
         } finally {
 
             System.err.println("Hi");
+
         }
 
         try {
@@ -101,21 +110,27 @@ class Test {
         } finally {
 
             System.err.println("Hi");
+
         }
 
-        try (Lock l = lock.lock()) {}
+        try (Lock l = lock.lock()) {
+        }
 
         try (Lock l = lock.lock()) {
         } finally {
         }
 
-        for (; ; ) {}
+        for (; ; ) {
+        }
 
-        while (true) {}
+        while (true) {
+        }
 
-        do {} while (true);
+        do {
+        } while (true);
 
-        if (true) {}
+        if (true) {
+        }
 
         if (true) {
         } else if (true) {
@@ -156,5 +171,7 @@ class Test {
         try {
         } catch (Exception e) {
         }
+
     }
+
 }
