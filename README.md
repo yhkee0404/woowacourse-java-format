@@ -9,7 +9,7 @@
 
 [v1.24.0.14_WOOWACOURSE]: https://github.com/yhkee0404/woowacourse-java-format/releases/tag/v1.24.0.14_WOOWACOURSE
 [Pull Request 전 체크리스트]: https://github.com/woowacourse/woowacourse-docs/blob/main/cleancode/pr_checklist.md
-[코드 리뷰]: https://github.com/yhkee0404/woowacourse-java-format/compare/1b55c7e731d88cab41141227f27589a14f320756..test-resources-intellij-wooteco-xml-java-imports-and-formatting
+[코드 리뷰]: https://github.com/yhkee0404/woowacourse-java-format/compare/test-resources-intellij-wooteco-xml-java-imports-and-formatting..1b55c7e731d88cab41141227f27589a14f320756
 
 `woowacourse-java-format`은 [google-java-format][]을 수정한 프로그램입니다. Java 소스 코드를 우아한테크코스의 [Java Style Guide][]에 맞게 포매팅합니다.
 
