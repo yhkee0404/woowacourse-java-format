@@ -1,55 +1,50 @@
 class LiteralReflow {
-    static class TestLineBreak {
-        String doesNotBreakAt120 = "AVeryVeryVeryVery very long long long long long long long long long loong sentence";
-        String breaksAt121 =
-                "AVeryVeryVeryVery very long long long long long long long long long long loooong sentence";
-    }
 
-    static class TestReflowLimit {
-        String doesNotReflowAt120 =
-                "AVeryVeryVery very long long long long long long long long long long long long long looooong sentence";
-        String reflowsWhenLongerThan120 =
-                "AVeryVeryVery very long long long long long long long long long long long long long long long"
-                        + " sentence";
-    }
+  static class TestLineBreak {
 
-    static class TestReflowLocation {
-        String accommodatesWordsUpTo120 =
-                "AVeryVeryVery very long long long long long long long long long long long long long long long looooong"
-                        + " sentence";
-        String breaksBeforeWordsReach121 =
-                "AVeryVeryVery very long long long long long long long long long long long long long long long"
-                        + " loooooong sentence";
-    }
+    String doesNotBreakAt120 = "AVeryVeryVeryVery very long long long long long long long long long loong sentence";
+    String breaksAt121 = "AVeryVeryVeryVery very long long long long long long long long long long loooong sentence";
+  }
 
-    static class Test2LineReflowLimit {
-        String doesNotReflowEitherLinesAt120 =
-                "AVeryVeryVery very long long long long long long long long long long long long long looooong sentence."
-                        + " AndVeryVery a second very long long long long long long long long long long loong sentence";
-        String reflowsLastLineAt121 =
-                "AVeryVeryVery very long long long long long long long long long long long long long looooong sentence."
-                        + " AndVeryVery a second very long long long long long long long long long long looong"
-                        + " sentence";
-    }
+  static class TestReflowLimit {
 
-    static class TestWithTrailingCharacters {
-        String fitsLastLineUpTo100WithTrailingCharacters =
-                f(
-                        f(
-                                "AVery very long long long long long long long long long long long long loong sentence."
-                                        + " And a second very long long long long long long long long loong sentence"));
-        String reflowsLastLineToAccommodateTrailingCharacters =
-                f(
-                        f(
-                                "AVery very long long long long long long long long long long long long loong sentence."
-                                        + " And a second very long long long long long long long long looong"
-                                        + " sentence"));
-        // Tests an off-by-one issue, but see b/179561701 for a similar issue that is not yet fixed
-        String doesNotOverTriggerLastLineReflow =
-                f(
-                        f(
-                                "AVery very long long long long long long long long long long long long loong sentence."
-                                        + " And a second very loong sentence with trailing a a a a a a a a a a a a a a"
-                                        + " a"));
-    }
+    String doesNotReflowAt120 =
+        "AVeryVeryVery very long long long long long long long long long long long long long looooong sentence";
+    String reflowsWhenLongerThan120 =
+        "AVeryVeryVery very long long long long long long long long long long long long long long long sentence";
+  }
+
+  static class TestReflowLocation {
+
+    String accommodatesWordsUpTo120 =
+        "AVeryVeryVery very long long long long long long long long long long long long long long long looooong sentence";
+    String breaksBeforeWordsReach121 =
+        "AVeryVeryVery very long long long long long long long long long long long long long long long loooooong sentence";
+  }
+
+  static class Test2LineReflowLimit {
+
+    String doesNotReflowEitherLinesAt120 =
+        "AVeryVeryVery very long long long long long long long long long long long long long looooong sentence. AndVeryVery a second very long long long long long long long long long long loong sentence";
+    String reflowsLastLineAt121 =
+        "AVeryVeryVery very long long long long long long long long long long long long long looooong sentence. AndVeryVery a second very long long long long long long long long long long looong sentence";
+  }
+
+  static class TestWithTrailingCharacters {
+
+    String fitsLastLineUpTo100WithTrailingCharacters =
+        f(
+            f(
+                "AVery very long long long long long long long long long long long long loong sentence. And a second very long long long long long long long long loong sentence"));
+    String reflowsLastLineToAccommodateTrailingCharacters =
+        f(
+            f(
+                "AVery very long long long long long long long long long long long long loong sentence. And a second very long long long long long long long long looong sentence"));
+    // Tests an off-by-one issue, but see b/179561701 for a similar issue that is not yet fixed
+    String doesNotOverTriggerLastLineReflow =
+        f(
+            f(
+                "AVery very long long long long long long long long long long long long loong sentence."
+                    + " And a second very loong sentence with trailing a a a a a a a a a a a a a a a"));
+  }
 }

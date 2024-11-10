@@ -1,13 +1,12 @@
 class B21105569 {
-    void f() {
-        // asd
-    }
 
-    void g() {
-        /* asd */
-    }
+  void f() {
+    // asd
+  }
 
-    void h() {
-        /* asd */
-    }
+  void g() {
+    /* asd */
+  }
+
+  void h() { /* asd */ }
 }

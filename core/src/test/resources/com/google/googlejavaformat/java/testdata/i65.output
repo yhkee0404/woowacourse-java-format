@@ -1,5 +1,6 @@
-import org.checkerframework.checker.nullness.qual.*;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 class UnannoPrimitives {
-    Object ar = new @Nullable byte[] {4};
+
+  Object ar = new @Nullable byte[]{4};
 }
