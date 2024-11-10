@@ -2,17 +2,21 @@ package testdata.output;
 
 public class B21192435 {
 
-    static class TestXxxxxxxxxxxxxxxxxx extends Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            implements Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx {}
+  static class TestXxxxxxxxxxxxxxxxxx extends Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      implements Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx {
+  }
 
-    static class TestXxxxxxxxxxxxx
-            extends XxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx implements Xxxxx {}
+  static class TestXxxxxxxxxxxxx
+      extends XxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      implements Xxxxx {
+  }
 
-    static class TestXxxxxxxxxxxxx
-            extends XxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            implements Xxxxxxxxxxxxxxxx {}
+  static class TestXxxxxxxxxxxxx
+      extends XxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      implements Xxxxxxxxxxxxxxxx {
+  }
 
-    static class Test<
-                    XxxxxxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
-            extends Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx implements Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx {}
+  static class Test<XxxxxxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>
+      extends Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx implements Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx {
+  }
 }

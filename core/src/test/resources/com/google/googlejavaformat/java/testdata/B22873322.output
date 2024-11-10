@@ -1,23 +1,20 @@
 class B22873322 {
-    {
-        fVeryVery(
-                param ->
-                        veryVeryVeryLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongExpr(
-                                param));
-        fVeryVery(
-                (param1, param2) ->
-                        veryVeryVeryLooooooooooooooooooooooooooooooooooooooooooooooooongExpr(param1, param2));
-        fVeryVery(
-                (int param) ->
-                        veryVeryVeryLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongExpr(param));
-        f(
-                (param1, param2) -> {
-                    return expr(param1, param2);
-                });
-        f(
-                (param1, param2) -> {
-                    Object foo = expr(param1, param2);
-                    return foo;
-                });
-    }
+  {
+    fVeryVery(
+        param -> veryVeryVeryLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongExpr(
+            param));
+    fVeryVery(
+        (param1, param2) -> veryVeryVeryLooooooooooooooooooooooooooooooooooooooooooooooooongExpr(
+            param1, param2));
+    fVeryVery((
+        int param) -> veryVeryVeryLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongExpr(
+            param));
+    f((param1, param2) -> {
+      return expr(param1, param2);
+    });
+    f((param1, param2) -> {
+      Object foo = expr(param1, param2);
+      return foo;
+    });
+  }
 }
