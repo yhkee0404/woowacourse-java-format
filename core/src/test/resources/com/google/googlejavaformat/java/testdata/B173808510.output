@@ -3,7 +3,6 @@ class B173808510 {
     @FlagSpec(
             name = "myFlag",
             help =
-                    "areallyareallyareallyreallyreallyreallyreallyreallyreallyreallyreallyreallyreallyreallyloongword"
-                            + " word1 word2")
+                    "areallyareallyareallyreallyreallyreallyreallyreallyreallyreallyreallyreallyreallyreallyloongword word1 word2")
     Flag<Integer> dummy = null;
 }
