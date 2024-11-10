@@ -1,8 +1,19 @@
 # woowacourse-java-format
 
+> ***New:*** Pull Request 전 체크리스트 항목 중 [코드 한 줄에 점(.)을 하나만 허용했는가?][] 지원 기능을 추가했습니다! [v1.24.0.14_WOOWACOURSE][]부터 적용되고 Expression 단위로 두 번째 점(.)부터 줄 바꿈을 강제합니다.  
+> [Jetbrains Marketplace][]보다 [다운로드][v1.24.0.14_WOOWACOURSE]에 먼저 배포됩니다. [intellij-java-google-style.xml][]의 테스트 결과와 비교하며 [코드 리뷰][]를 해 주세요!
+> 
+> ### 코드 한 줄에 점(.)을 하나만 허용했는가?
+> * 디미터(Demeter)의 법칙(“친구하고만 대화하라”)을 지켰는가?
+> * 예를 들어 location.current.representation.substring(0, 1)와 같이 여러 개의 점(.)이 등장하면 리팩토링할 부분을 찾아본다.
+
+[v1.24.0.14_WOOWACOURSE]: https://github.com/yhkee0404/woowacourse-java-format/releases/tag/v1.24.0.14_WOOWACOURSE
+[코드 한 줄에 점(.)을 하나만 허용했는가?]: https://github.com/woowacourse/woowacourse-docs/blob/main/cleancode/pr_checklist.md#%EC%BD%94%EB%93%9C-%ED%95%9C-%EC%A4%84%EC%97%90-%EC%A0%90%EC%9D%84-%ED%95%98%EB%82%98%EB%A7%8C-%ED%97%88%EC%9A%A9%ED%96%88%EB%8A%94%EA%B0%80
+[코드 리뷰]: https://github.com/yhkee0404/woowacourse-java-format/compare/1b55c7e731d88cab41141227f27589a14f320756..test-resources-intellij-wooteco-xml-java-imports-and-formatting
+
 `woowacourse-java-format`은 [google-java-format][]을 수정한 프로그램입니다. Java 소스 코드를 우아한테크코스의 [Java Style Guide][]에 맞게 포매팅합니다.
 
-기존에 제공되던 [IDE별 설정 파일][]도 간편하게 수정할 수 있지만, 정밀하지 않다는 문제를 발견하고 개발했습니다. 가령 IntelliJ와 Eclipse의 설정에서 지원하는 기능이 다르고 Visual Studio Code에서 권장하는 [Language Support for Java(TM) by Red Hat][]은 줄 바꿈 시 이어지는 들여쓰기 칸 수를 별도로 설정할 수 없습니다. [google-java-format][] 개발을 선택한 이유는 Import 순서까지 고치는 등 소위 영혼까지 포매팅한다고 언급하기 때문입니다: [Why we need IDEA plugin as we already can import the xml file?][]
+기존에 제공되던 [IDE별 설정 파일][intellij-java-google-style.xml]도 간편하게 수정할 수 있지만, 정밀하지 않다는 문제를 발견하고 개발했습니다. 가령 IntelliJ와 Eclipse의 설정에서 지원하는 기능이 다르고 Visual Studio Code에서 권장하는 [Language Support for Java(TM) by Red Hat][]은 줄 바꿈 시 이어지는 들여쓰기 칸 수를 별도로 설정할 수 없습니다. [google-java-format][] 개발을 선택한 이유는 Import 순서까지 고치는 등 소위 영혼까지 포매팅한다고 언급하기 때문입니다: [Why we need IDEA plugin as we already can import the xml file?][]
 
 > a new Java formatter that follows the Google Java Style
 > Guide quite precisely---to the letter and to the spirit.
@@ -19,7 +30,7 @@
 [google-java-format]: https://github.com/google/google-java-format
 [Java Style Guide]: https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java
 [Google Java Style Guide]: https://google.github.io/styleguide/javaguide.html
-[IDE별 설정 파일]: https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+[intellij-java-google-style.xml]: https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
 
 ## Contributing
 
@@ -27,7 +38,7 @@
 
 ## 사용법
 
-[Jetbrains Marketplace][]에서 바로 설치하거나, Github Releases에서 [다운로드][]하고 [google-java-format](https://github.com/google/google-java-format/releases) 대신 사용할 수 있습니다.
+[Jetbrains Marketplace][]에서 바로 설치하거나, Github Releases에서 [다운로드][]하고 [google-java-format](https://github.com/google/google-java-format/releases) 대신 사용할 수 있습니다. [Jetbrains Marketplace][]보다 [다운로드][]에 먼저 배포됩니다. 
 
 [Jetbrains Marketplace]: https://plugins.jetbrains.com/plugin/25728-woowacourse-java-format
 [다운로드]: https://github.com/yhkee0404/woowacourse-java-format/releases
@@ -73,10 +84,14 @@ Code Style은 Import 순서를 의미하며 들여쓰기 등은 동일합니다.
 
 ### [다운로드][]하고 바로 실행하기
 
-`woowacourse-java-format-1.24.0-all-deps.jar` 파일을 [다운로드][]하고 Java로 실행할 수 있습니다. Java 독립적인 운영체제별 실행 파일은 곧 배포할 예정입니다.
+운영체제별 실행 파일을 [다운로드][]할 수 있습니다. 또는 `woowacourse-java-format-1.24.0.14_WOOWACOURSE-all-deps.jar` 파일을 [다운로드][]하고 Java로 실행할 수 있습니다.
 
 ```zsh
-java -jar woowacourse-java-format-1.24.0-all-deps.jar Sample.java
+woowacourse-java-format_windows-x86-64.exe Sample.java
+```
+
+```zsh
+java -jar woowacourse-java-format-1.24.0.14_WOOWACOURSE-all-deps.jar Sample.java
 ```
 
 `--aosp` (Android Open Source Project (AOSP) Style로 Import 고치기) 등 터미널에서 사용 가능한 CLI 옵션은 `--help`를 참고하세요. `git diff`와도 연동할 수 있습니다: [google-java-format-diff.py][]
@@ -87,9 +102,9 @@ java -jar woowacourse-java-format-1.24.0-all-deps.jar Sample.java
 
 `Format Document` 그리고 `Organize Imports`와 연동할 수 있습니다.
 
-`woowacourse-java-format-1.24.0-all-deps.jar` 파일을 [다운로드][]하고 [Google Java Format for VS Code][] Extension을 설치해 주세요.
+`woowacourse-java-format-1.24.0.14_WOOWACOURSE-all-deps.jar` 파일을 [다운로드][]하고 [Google Java Format for VS Code][] Extension을 설치해 주세요.
 
-`settings.json`에서 `java.format.settings.google.executable`, 또는 `File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable`에 `woowacourse-java-format-1.24.0-all-deps.jar` 파일 경로를 입력하고 저장해 주세요: 
+`settings.json`에서 `java.format.settings.google.executable`, 또는 `File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable`에 `woowacourse-java-format-1.24.0.14_WOOWACOURSE-all-deps.jar` 파일 경로를 입력하고 저장해 주세요: 
 
 ![Visual Studio Code > File > Preferences > Settings > Extensions > google-java-format-for-vs-code > Java > Format > Settings > Google: Executable](screenshots/vscode-enable.png)
 
@@ -103,7 +118,7 @@ java -jar woowacourse-java-format-1.24.0-all-deps.jar Sample.java
 
 Import 순서 고치는 기능과, 문자열 상수의 열 제한 초과를 방지하는 Reflow 기능이 없습니다. 추가 예정이지만 선택할 UI가 없을 것 같으니 Eclipse Plugin 대신 후술할 [Spotless Plugin](#기타-Plugin-설치하기)을 사용해도 좋습니다.
 
-`woowacourse-java-format-eclipse-plugin-1.24.0.0_WOOWACOURSE.jar` 파일을 [다운로드][]하고 `dropins` 폴더에 옮겨 주세요.
+`woowacourse-java-format-eclipse-plugin-1.24.0.14_WOOWACOURSE.jar` 파일을 [다운로드][]하고 `dropins` 폴더에 옮겨 주세요.
 
 `google-java-format` 또는 그에 상응하는 jar 파일과 함께 있으면 동작하지 않으니 유일하게 존재하도록 주의해 주세요.
 
@@ -119,7 +134,33 @@ IntelliJ처럼 [VM Options][] 설정이 필요합니다. `eclipse.ini` 파일의
 
 ![Eclipse Project > Properties > Java Code Style > Formatter > Enable project specific settings > Formatter Implementation > woowacourse-java-format](screenshots/eclipse-enable.png)
 
-### 기타 Plugin 설치하기
+
+### Maven이나 Gradle로 설치하기
+
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>io.github.yhkee0404.woowacoursejavaformat</groupId>
+      <artifactId>woowacourse-java-format</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+```
+
+[pom.xml]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/eclipse_plugin/pom.xml
+[build.gradle.kts]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/idea_plugin/build.gradle.kts
+
+```kotlin
+dependencies {
+  implementation("io.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
+}
+
+repositories {
+  mavenCentral()
+}
+```
+
+#### 기타 Plugin 설치하기
 
 다양한 IDE를 지원하는 [Spotless IDE Integration][], Gradle Plugin, Maven Plugin, GitHub Actions 등에서 설치할 수 있습니다:
 
@@ -143,7 +184,7 @@ IntelliJ처럼 [VM Options][] 설정이 필요합니다. `eclipse.ini` 파일의
     *   [googlejavaformat-action](https://github.com/axel-op/googlejavaformat-action):
         Push할 때마다 자동 포매팅
 
-### Java 소스 코드에서 함수 사용하기
+#### Java 소스 코드에서 함수 사용하기
 
 JDK 16 이상이라면 IntelliJ나 Eclipse처럼 [VM Options][] 설정이 필요합니다: [JEP 396][]: Strongly Encapsulate JDK Internals by Default
 
@@ -163,57 +204,16 @@ CharSink output = ...
 new Formatter().formatSource(source, output);
 ```
 
-#### Maven으로 설치하기
-
-저장소 등록은 아직 진행 중입니다. `eclipse_plugin/` 디렉토리의 [pom.xml][]을 참고하세요:
-
-```xml
-  <dependencies>
-    <dependency>
-      <groupId>io.github.yhkee0404.woowacoursejavaformat</groupId>
-      <artifactId>woowacourse-java-format</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-  </dependencies>
-
-  <repositories>
-    <repository>
-        <id>in-project</id>
-        <name>custom jars</name>
-        <url>file://${project.basedir}/../core/target</url>
-    </repository>
-  </repositories>
-```
-
-[pom.xml]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/eclipse_plugin/pom.xml
-[build.gradle.kts]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/idea_plugin/build.gradle.kts
-
-#### Gradle로 설치하기
-
-저장소 등록은 아직 진행 중입니다. `idea_plugin/` 디렉토리의 [build.gradle.kts][]을 참고하세요:
-
-```kotlin
-dependencies {
-  implementation("io.github.yhkee0404.woowacoursejavaformat:woowacourse-java-format:${googleJavaFormatVersion}")
-}
-
-repositories {
-  flatDir {
-      dirs("../core/target")
-  }
-}
-```
-
 ## 빌드해 보기
 
 다음 파일들을 빌드할 수 있습니다:
 
 ```zsh
-core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-all-deps.jar
-core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-javadoc.jar
-core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE-sources.jar
-core/target/woowacourse-java-format-1.24.0.0_WOOWACOURSE.jar
-eclipse_plugin/target/woowacourse-java-format-eclipse-plugin-1.24.0.0_WOOWACOURSE.jar
+core/target/woowacourse-java-format-1.24.0.14_WOOWACOURSE-all-deps.jar
+core/target/woowacourse-java-format-1.24.0.14_WOOWACOURSE-javadoc.jar
+core/target/woowacourse-java-format-1.24.0.14_WOOWACOURSE-sources.jar
+core/target/woowacourse-java-format-1.24.0.14_WOOWACOURSE.jar
+eclipse_plugin/target/woowacourse-java-format-eclipse-plugin-1.24.0.14_WOOWACOURSE.jar
 idea_plugin/build/distributions/project.zip
 ```
 
@@ -222,17 +222,17 @@ idea_plugin/build/distributions/project.zip
 [docker-compose.yml]: https://github.com/yhkee0404/woowacourse-java-format/blob/main/docker-compose.yml
 
 ```zsh
-WOOWACOURSE_LOCAL_VERSION=1.24.0.0_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d core
+WOOWACOURSE_LOCAL_VERSION=1.24.0.14_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d core
 ```
 
 core 빌드를 마치면 동일한 WOOWACOURSE_LOCAL_VERSION으로 eclipse_plugin과 idea_plugin도 빌드할 수 있습니다.
 
 ```zsh
-WOOWACOURSE_LOCAL_VERSION=1.24.0.0_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d eclipse_plugin
+WOOWACOURSE_LOCAL_VERSION=1.24.0.14_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d eclipse_plugin
 ```
 
 ```zsh
-WOOWACOURSE_LOCAL_VERSION=1.24.0.0_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d idea_plugin
+WOOWACOURSE_LOCAL_VERSION=1.24.0.14_WOOWACOURSE_LOCAL UID=$(id -u) GID=$(id -g) docker compose up -d idea_plugin
 ```
 
 idea_plugin 빌드 시 알려진 오류가 발생해 [해결책](https://youtrack.jetbrains.com/issue/JBR-1550/EXCEPTIONACCESSVIOLATION-in-sun.awt.windows.ThemeReader.getThemeMargins-building-a-plugin-with-OpenJDK-JBRE-for-IntelliJ-EAP#focus=Comments-27-3515408.0-0)을 파악 중이지만 결국 빌드는 성공하고 사용에 문제는 없으니 일단 무시해 주세요: JetBrains/intellij-platform-gradle-plugin#1513
