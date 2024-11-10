@@ -21,9 +21,9 @@ class T {
                 x // line comment
                 );
         fffff.fffff(
-                        x, // line comment
-                        x // line comment
-                        )
+                x, // line comment
+                x // line comment
+                )
                 .fffff(
                         x, // line comment
                         x // line comment
@@ -47,8 +47,8 @@ class T {
                 x // line comment
                 );
         fffff.fffff(
-                        x // line comment
-                        )
+                x // line comment
+                )
                 .fffff(
                         x // line comment
                         );

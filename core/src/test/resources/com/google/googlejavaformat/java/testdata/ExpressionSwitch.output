@@ -26,9 +26,12 @@ class ExpressionSwitch {
 
         switch (i) {
             case 0 -> {
-                System.out.println("0");
+                System.out
+                        .println("0");
             }
-            default -> System.out.println("default");
+            default ->
+                    System.out
+                            .println("default");
         }
     }
 

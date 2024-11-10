@@ -1,5 +1,7 @@
 class WildBound {
     <T> T f() {
-        return (T) X.class.newInstance((F<?>) f, t);
+        return (T)
+                X.class
+                        .newInstance((F<?>) f, t);
     }
 }

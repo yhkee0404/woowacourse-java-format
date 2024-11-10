@@ -16,8 +16,15 @@ class B24202287 {
     }
 
     IntentSource getSource() {
-        return mIntent.isPresent() && mIntent.get().hasExtra(INTENT_SOURCE_KEY)
-                ? IntentSource.values()[mIntent.get().getIntExtra(INTENT_SOURCE_KEY, IntentSource.OTHER.ordinal())]
+        return mIntent.isPresent()
+                        && mIntent.get()
+                                .hasExtra(INTENT_SOURCE_KEY)
+                ? IntentSource.values()[
+                        mIntent.get()
+                                .getIntExtra(
+                                        INTENT_SOURCE_KEY,
+                                        IntentSource.OTHER
+                                                .ordinal())]
                 : IntentSource.OTHER;
     }
 

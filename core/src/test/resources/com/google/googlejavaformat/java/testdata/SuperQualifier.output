@@ -12,6 +12,7 @@ class SuperQualifier {
     }
 
     {
-        this.aaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbb(ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc);
+        this.aaaaaaaaaaaaaaaa
+                .bbbbbbbbbbbbbbbbbbb(ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc);
     }
 }

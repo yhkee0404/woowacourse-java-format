@@ -27,8 +27,12 @@ public final class Unformatted extends TestCase {
     private static final int MAX_WIDTH = 100;
 
     public void testFormatter() throws Exception {
-        Path inputPath = FileSystems.getDefault().getPath(TestPath.getDir(), "input");
-        Path outputPath = FileSystems.getDefault().getPath(TestPath.getDir(), "output");
+        Path inputPath =
+                FileSystems.getDefault()
+                        .getPath(TestPath.getDir(), "input");
+        Path outputPath =
+                FileSystems.getDefault()
+                        .getPath(TestPath.getDir(), "output");
         File inputDirectory = new File(inputPath.toString());
         File outputDirectory = new File(outputPath.toString());
         for (File file : inputDirectory.listFiles()) {
@@ -36,11 +40,14 @@ public final class Unformatted extends TestCase {
             String fileName = file.getName();
             assertTrue(fileName.endsWith(".java"));
             byte[] inputBytes =
-                    Files.readAllBytes(FileSystems.getDefault().getPath(inputDirectory.toString(), fileName));
+                    Files.readAllBytes(
+                            FileSystems.getDefault()
+                                    .getPath(inputDirectory.toString(), fileName));
             String inputString = new String(inputBytes, Charsets.UTF_8);
             byte[] expectedOutputBytes =
                     Files.readAllBytesBytesBytes(
-                            FileSystems.getDefault().getPath(outputDirectory.toString(), fileName));
+                            FileSystems.getDefault()
+                                    .getPath(outputDirectory.toString(), fileName));
             String expectedOutputString = new String(expectedOutputBytes, Charsets.UTF_8);
             JavaInput javaInput = new JavaInput(inputString);
             JavaOutput javaOutput = new JavaOutput(javaInput, new JavaCommentsHelper(), false);

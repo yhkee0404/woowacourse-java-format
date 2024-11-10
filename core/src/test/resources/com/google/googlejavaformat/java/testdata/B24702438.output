@@ -34,7 +34,8 @@ class B24702438 {
         // this is a comment
 
         // another comment
-        System.err.println("asd");
+        System.err
+                .println("asd");
     }
 
     void f(

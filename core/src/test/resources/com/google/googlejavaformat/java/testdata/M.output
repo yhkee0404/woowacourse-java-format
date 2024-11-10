@@ -910,8 +910,7 @@ class M {
                                 Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>,
                                 Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>>>
                 list3 =
-                        ImmutableList
-                                .<Pair<
+                        ImmutableList.<Pair<
                                                 Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>,
                                                 Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>>>
                                         of(null);
@@ -927,8 +926,7 @@ class M {
                                         + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0);
         Pair<Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>, Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>>
                 pair3 =
-                        ImmutableList
-                                .<Pair<
+                        ImmutableList.<Pair<
                                                 Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>,
                                                 Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>>>
                                         of(null)
@@ -939,8 +937,13 @@ class M {
 
     void f(int... x) {
         M m = null;
-        ((m.identity().identity().identity().identity()).identity().identity().identity().identity())
-                .identity()
+        ((m.identity()
+                                .identity()
+                                .identity()
+                                .identity()).identity()
+                        .identity()
+                        .identity()
+                        .identity()).identity()
                 .identity()
                 .identity()
                 .identity();
@@ -1003,13 +1006,16 @@ class M {
                 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0
                         + 0 + 0 + 0 + 0 + 0 + 0);
         Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.ffffffffff(0);
-        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.fff(0).fff(0);
-        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.fff(0 + 0).fff(0);
-        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.fff(
-                        0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0
-                                + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0)
+        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.fff(0)
                 .fff(0);
-        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.ffffffffff(0).fff(0);
+        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.fff(0 + 0)
+                .fff(0);
+        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.fff(
+                0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0
+                        + 0 + 0 + 0 + 0 + 0 + 0)
+                .fff(0);
+        Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.ffffffffff(0)
+                .fff(0);
         return this;
     }
 
@@ -1018,17 +1024,18 @@ class M {
     }
 
     M ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(int x) {
-        new M()
-                .FffffffffffffffFffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(
-                        0 + 0 + 0 + 0);
+        new M().FffffffffffffffFffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(
+                0 + 0 + 0 + 0);
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(0);
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(
                 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0
                         + 0 + 0 + 0 + 0 + 0 + 0);
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(0).f(0);
-        ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(0).fff(0).fff(0).f(0);
-        fFffffffffffffffFfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(0)
-                .ffffffffff(0);
+        ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(0).fff(0)
+                .fff(0)
+                .f(0);
+        fFffffffffffffffFfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff(0).ffffffffff(
+                0);
         return this;
     }
 

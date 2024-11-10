@@ -117,8 +117,12 @@ public final class PartialFormattingTest {
     String expectedOutput =
         lines(
             "class Foo {{",
-            "        ImmutableList<Integer> ids ="
-                + " ImmutableList.builder().add(1).add(2).add(3).build();",
+            "        ImmutableList<Integer> ids =",
+            "                ImmutableList.builder()",
+            "                        .add(1)",
+            "                        .add(2)",
+            "                        .add(3)",
+            "                        .build();",
             "}}",
             "");
     int idx = input.indexOf("add(2)");
@@ -610,19 +614,15 @@ public final class PartialFormattingTest {
             "        definitionService.insert(createIncrementalDefinition(4));",
             "",
             "        // No maxResults",
-            "        assertThat(",
-            "                        achievementFirstPartyHelper",
-            "                                .listDefinitionsByApplication(",
-            "                                        STUB_GAIA_ID,",
-            "                                        STUB_APPLICATION_ID,",
-            "                                        Optional.<Integer>absent(),",
-            "                                        Optional.<String>absent())",
-            "                                .getAchievements())",
-            "                .containsExactly(",
-            "                        createExpectedDefinition(1),",
-            "                        createIncrementalExpectedDefinition(2),",
-            "                        createExpectedDefinition(3),",
-            "                        createIncrementalExpectedDefinition(4))",
+            "        assertThat(achievementFirstPartyHelper"
+                + ".listDefinitionsByApplication(",
+            "                        STUB_GAIA_ID, STUB_APPLICATION_ID,"
+                + " Optional.<Integer>absent(), Optional.<String>absent())",
+            "                        .getAchievements()).containsExactly(",
+            "                createExpectedDefinition(1),",
+            "                createIncrementalExpectedDefinition(2),",
+            "                createExpectedDefinition(3),",
+            "                createIncrementalExpectedDefinition(4))",
             "                .inOrder();",
             "    }",
             "}",
@@ -751,7 +751,8 @@ public final class PartialFormattingTest {
             "        int y =",
             "                new Runnable() {",
             "                    void run() {",
-            "                        System.err.println(42);",
+            "                        System.err",
+            "                                .println(42);",
             "                    }",
             "                };",
             "int z = ",
@@ -791,7 +792,8 @@ public final class PartialFormattingTest {
             "    int y =",
             "            new Runnable() {",
             "                void run() {",
-            "                    System.err.println(42);",
+            "                    System.err",
+            "                            .println(42);",
             "                }",
             "            };",
             "int z = ",
@@ -989,7 +991,8 @@ public final class PartialFormattingTest {
             "public class MyTest {{",
             "if (true) {",
             "if (true) {",
-            "                System.err.println(\"Hello\");",
+            "                System.err",
+            "                        .println(\"Hello\");",
             "} else {",
             "System.err.println(\"Goodbye\");",
             "}",
@@ -1324,7 +1327,8 @@ public final class PartialFormattingTest {
         lines(
             "class Test {{",
             "        for (Integer x : Arrays.asList(1, 2, 3)) {",
-            "            System.err.println(x);",
+            "            System.err",
+            "                    .println(x);",
             "}}}",
             "");
 
@@ -1360,7 +1364,8 @@ public final class PartialFormattingTest {
         lines(
             "class Test {{", //
             line1,
-            "            System.err.println(x);",
+            "            System.err",
+            "                    .println(x);",
             "}}}",
             "");
 

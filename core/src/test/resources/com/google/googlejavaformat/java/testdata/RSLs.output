@@ -63,7 +63,7 @@ ipsum
 
         """
         hello %s
-        """
-                .formatted("world");
+        """.formatted(
+                "world");
     }
 }

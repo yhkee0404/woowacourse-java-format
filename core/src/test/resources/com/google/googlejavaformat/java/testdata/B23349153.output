@@ -6,7 +6,8 @@ class B23349153 {
     }
 
     {
-        System.err.println("Hello");
+        System.err
+                .println("Hello");
         ;
     }
 }

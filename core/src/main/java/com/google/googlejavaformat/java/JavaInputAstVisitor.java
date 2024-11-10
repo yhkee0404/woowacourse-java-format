@@ -2891,7 +2891,7 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
           break LOOP;
       }
     } while (node != null);
-    List<ExpressionTree> items = new ArrayList<>(stack);
+    // List<ExpressionTree> items = new ArrayList<>(stack);
 
     boolean needDot = false;
 
@@ -2903,20 +2903,26 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
       if (node.getKind() == NEW_CLASS && ((NewClassTree) node).getClassBody() != null) {
         builder.open(ZERO);
         scan(getArrayBase(node), null);
-        token(".");
+        // token(".");
+        needDot = true;
+        formatArrayIndices(getArrayIndices(node));
+        if (stack.isEmpty()) {
+          builder.close();
+          return;
+        }
       } else {
+        /*
         builder.open(plusFour);
         scan(getArrayBase(node), null);
         builder.breakOp();
-        needDot = true;
-      }
-      formatArrayIndices(getArrayIndices(node));
-      if (stack.isEmpty()) {
-        builder.close();
-        return;
+        */
+        stack.addFirst(node);
+        node = null;
       }
     }
+    List<ExpressionTree> items = new ArrayList<>(stack);
 
+    /*
     Set<Integer> prefixes = new LinkedHashSet<>();
 
     // Check if the dot chain has a prefix that looks like a type name, so we can
@@ -2980,6 +2986,8 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
     } else {
       visitRegularDot(items, needDot);
     }
+    */
+    visitRegularDot(items, needDot);
 
     if (node != null) {
       builder.close();
@@ -2993,36 +3001,55 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
    * @param needDot whether a leading dot is needed
    */
   private void visitRegularDot(List<ExpressionTree> items, boolean needDot) {
-    boolean trailingDereferences = items.size() > 1;
+    // boolean trailingDereferences = items.size() > 1;
+    /*
     boolean needDot0 = needDot;
     if (!needDot0) {
       builder.open(plusFour);
     }
+    */
+    builder.open(plusFour);
+    FillMode fillMode = needDot ? FillMode.INDEPENDENT : null;
+    BreakTag nameTag = genSym();
+    Indent argsIndent = Indent.If.make(nameTag, plusFour, ZERO);
+    /*
     // don't break after the first element if it is every small, unless the
     // chain starts with another expression
     int minLength = indentMultiplier * 4;
     int length = needDot0 ? minLength : 0;
+    */
     for (ExpressionTree e : items) {
       if (needDot) {
+        /*
         if (length > minLength) {
           builder.breakOp(FillMode.UNIFIED, "", ZERO);
         }
+        */
+        if (fillMode != null) {
+          builder.breakOp(fillMode, "", ZERO, Optional.of(nameTag));
+        }
+        fillMode = FillMode.FORCED;
         token(".");
-        length++;
+        // length++;
       }
-      if (!fillFirstArgument(e, items, trailingDereferences ? ZERO : minusFour)) {
+      // if (!fillFirstArgument(e, items, trailingDereferences ? ZERO : minusFour)) {
+      if (!fillFirstArgument(e, items, ZERO)) {
         BreakTag tyargTag = genSym();
         dotExpressionUpToArgs(e, Optional.of(tyargTag));
         Indent tyargIndent = Indent.If.make(tyargTag, plusFour, ZERO);
         dotExpressionArgsAndParen(
-            e, tyargIndent, (trailingDereferences || needDot) ? plusFour : ZERO);
+            // e, tyargIndent, (trailingDereferences || needDot) ? plusFour : ZERO);
+            e, tyargIndent, argsIndent);
       }
-      length += getLength(e, getCurrentPath());
+      // length += getLength(e, getCurrentPath());
       needDot = true;
     }
+    /*
     if (!needDot0) {
       builder.close();
     }
+    */
+    builder.close();
   }
 
   // avoid formattings like:
@@ -3044,7 +3071,7 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
     MethodInvocationTree methodInvocation = (MethodInvocationTree) e;
     Name name = getMethodName(methodInvocation);
     if (!(methodInvocation.getMethodSelect() instanceof IdentifierTree)
-        || name.length() > 4
+        // || name.length() > 4
         || !methodInvocation.getTypeArguments().isEmpty()
         || methodInvocation.getArguments().size() != 1) {
       return false;
@@ -3175,6 +3202,9 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
    * foo}.
    */
   private static ExpressionTree getArrayBase(ExpressionTree node) {
+    if (! (node instanceof ArrayAccessTree) && node.getKind() == ARRAY_ACCESS) {
+      int b = 3;
+    }
     while (node instanceof ArrayAccessTree) {
       node = ((ArrayAccessTree) node).getExpression();
     }

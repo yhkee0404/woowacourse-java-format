@@ -78,8 +78,7 @@ class E<T> {
                         Pair<Pair<Pair<T, T>, Pair<T, T>>, Pair<Pair<T, T>, Pair<T, T>>>,
                         Pair<Pair<Pair<T, T>, Pair<T, T>>, Pair<Pair<T, T>, Pair<T, T>>>>
                 x :
-                        Lists
-                                .<Pair<
+                        Lists.<Pair<
                                                 Pair<Pair<Pair<T, T>, Pair<T, T>>, Pair<Pair<T, T>, Pair<T, T>>>,
                                                 Pair<Pair<Pair<T, T>, Pair<T, T>>, Pair<Pair<T, T>, Pair<T, T>>>>>
                                         newArrayList()) {}

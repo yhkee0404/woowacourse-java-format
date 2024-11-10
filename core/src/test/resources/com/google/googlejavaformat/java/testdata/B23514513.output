@@ -1,8 +1,10 @@
 class Test {
     {
         f012345678901(
-                r2345rr.kkkkk.uuuuuuuu,
-                rrr.iiiiii.ggggggggggggggggg,
+                r2345rr.kkkkk
+                        .uuuuuuuu,
+                rrr.iiiiii
+                        .ggggggggggggggggg,
                 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx);
     }
 }

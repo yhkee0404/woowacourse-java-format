@@ -6,7 +6,9 @@ class B21465217 {
                         new OutputStreamWriter(bout, UTF_8___________________________)) {}
 
         try (Writer sourceWriterWriterWriterWrit =
-                env.getFiler().createSourceFile(qualifiedNamezzzzzzzz).openWriter()) {
+                env.getFiler()
+                        .createSourceFile(qualifiedNamezzzzzzzz)
+                        .openWriter()) {
             sourceWriter.append(fileContents);
         }
     }

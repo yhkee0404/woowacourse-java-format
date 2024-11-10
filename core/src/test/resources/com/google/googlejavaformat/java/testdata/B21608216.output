@@ -5,7 +5,8 @@
         modules = {
             BackendsModule.class,
             CommonBackendsModule.class,
-            ChromeSuggestionsPlugin.ChromeSuggestionsModule.class
+            ChromeSuggestionsPlugin.ChromeSuggestionsModule
+                    .class
         })
 @Module(library = true, complete = false)
 @Module(

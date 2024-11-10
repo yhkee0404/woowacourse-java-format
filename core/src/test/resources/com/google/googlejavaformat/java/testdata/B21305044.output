@@ -26,11 +26,16 @@ class B21305044 {
                 c;
     }
 
-    Function f = com.foo.bar.Baz::func;
+    Function f =
+            com.foo
+                            .bar
+                            .Baz
+                    ::func;
     Function g = new Baz()::func;
     Function h = Baz::new;
     Function i =
-            com.foo.bar
+            com.foo
+                            .bar
                             .VeryLooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooongBaz
                     ::new;
 
@@ -49,10 +54,12 @@ class B21305044 {
                                 + breakableResult;
         Function f =
                 () ->
-                        System.err.println(
-                                "XXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                        System.err
+                                .println(
+                                        "XXXXXXXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         Function f =
                 (someParam) ->
-                        System.err.println("XXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                        System.err
+                                .println("XXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 }

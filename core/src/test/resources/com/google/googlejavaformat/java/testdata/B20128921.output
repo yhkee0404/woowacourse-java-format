@@ -4,7 +4,8 @@ public class B20128921 {
 
         for (T a : ax) {
 
-            System.err.println(x);
+            System.err
+                    .println(x);
         }
     }
 }
