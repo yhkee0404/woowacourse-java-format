@@ -1,52 +1,51 @@
 class RSLs {
     String a =
             """
-            lorem
-                    ipsum
-            """;
+    lorem
+            ipsum
+    """;
     String b =
             """
-            lorem
-            ipsum
+    lorem
+    ipsum
             """;
     String c =
             """
-            lorem
-            ipsum
-            """;
+    lorem
+    ipsum
+    """;
     String d =
             """
-            ipsum
-            """;
+    ipsum
+    """;
     String e =
             """
-            """;
+    """;
     String f =
             """
-            ipsum\
-            """;
+    ipsum""";
     String g =
             """
-            lorem\
-            ipsum
-            """;
+    lorem\
+    ipsum
+    """;
     String h =
             """
-            lorem\
-            ipsum\
-            """;
+    lorem\
+    ipsum\
+    """;
     String i =
             """
-            lorem
+    lorem
 
-            ipsum
-            """;
+    ipsum
+    """;
     String j =
             """
-            lorem
-            one long incredibly unbroken sentence moving from topic to topic so that no one had a chance to interrupt
-            ipsum
-            """;
+    lorem
+    one long incredibly unbroken sentence moving from topic to topic so that no one had a chance to interrupt
+    ipsum
+    """;
     String k =
             """
 lorem
@@ -56,9 +55,9 @@ ipsum
     {
         f(
                 """
-                lorem
-                ipsum
-                """,
+        lorem
+        ipsum
+        """,
                 42);
 
         """
