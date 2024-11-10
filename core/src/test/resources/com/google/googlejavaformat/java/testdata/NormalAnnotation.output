@@ -1,56 +1,59 @@
 package com.google.googlejavaformat.java.test;
 
-/** JavaDoc comment. */
+/**
+ * JavaDoc comment.
+ */
 public @interface NormalAnnotation {
-    int a();
 
-    int b();
+  int a();
 
-    int c();
+  int b();
 
-    int d();
+  int c();
 
-    int e();
+  int d();
 
-    int f();
+  int e();
 
-    int g();
+  int f();
 
-    int h();
+  int g();
 
-    int i();
+  int h();
 
-    int j();
+  int i();
 
-    int k();
+  int j();
 
-    int l();
+  int k();
 
-    int m();
+  int l();
 
-    int n();
+  int m();
 
-    int o();
+  int n();
 
-    int p();
+  int o();
 
-    int q();
+  int p();
 
-    int r();
+  int q();
 
-    int s();
+  int r();
 
-    int t();
+  int s();
 
-    int u();
+  int t();
 
-    int v();
+  int u();
 
-    int w();
+  int v();
 
-    int x();
+  int w();
 
-    int y();
+  int x();
 
-    int z();
+  int y();
+
+  int z();
 }

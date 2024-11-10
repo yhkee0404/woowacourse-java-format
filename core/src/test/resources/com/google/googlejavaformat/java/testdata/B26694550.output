@@ -1,18 +1,22 @@
 class B26694550 {
-    {
-        /* === not a param comment */
-        fffffffffffffffffffffffffffffff(
-                ImmutableListListListList.copyOf(keys), /*&=*/
-                /* keepGoing= */ false,
-                ggggggggggggggggggggggggggggggggggggggggggg);
-        fffffffffffffffffffffffffffffff(
-                ImmutableListListListList.copyOf(keys),
-                /* keepGoing= */ false,
-                ggggggggggggggggggggggggggggggggggggggggggg);
-        fffffffffffffffffffffffffffffff(
-                ImmutableList.copyOf(keys),
-                /* foo_bar= */ false,
-                /*foo-bar=*/ false,
-                ggggggggggggggggggggggggggggggggggggggggggg);
-    }
+
+  {
+    /* === not a param comment */
+    fffffffffffffffffffffffffffffff(
+        ImmutableListListListList.copyOf(keys), /*&=*//*keepGoing=*/
+        false,
+        ggggggggggggggggggggggggggggggggggggggggggg);
+    fffffffffffffffffffffffffffffff(
+        ImmutableListListListList.copyOf(keys),
+        /*keepGoing=*/
+        false,
+        ggggggggggggggggggggggggggggggggggggggggggg);
+    fffffffffffffffffffffffffffffff(
+        ImmutableList.copyOf(keys),
+        /*foo_bar=*/
+        false,
+        /*foo-bar=*/
+        false,
+        ggggggggggggggggggggggggggggggggggggggggggg);
+  }
 }
