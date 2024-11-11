@@ -38,7 +38,7 @@
 
 ## 사용법
 
-[Jetbrains Marketplace][]에서 바로 설치하거나, Github Releases에서 [다운로드][]하고 [google-java-format](https://github.com/google/google-java-format/releases) 대신 사용할 수 있습니다. [Jetbrains Marketplace][]보다 [다운로드][]에 먼저 배포됩니다. 
+[Jetbrains Marketplace][]에서 바로 설치하거나, GitHub Releases에서 [다운로드][]하고 [google-java-format](https://github.com/google/google-java-format/releases) 대신 사용할 수 있습니다. [Jetbrains Marketplace][]보다 [다운로드][]에 먼저 배포됩니다. 
 
 [Jetbrains Marketplace]: https://plugins.jetbrains.com/plugin/25728-woowacourse-java-format
 [다운로드]: https://github.com/yhkee0404/woowacourse-java-format/releases
@@ -62,7 +62,9 @@
 
 ![IntelliJ > Help > Edit Custom VM Options...](screenshots/intellij-jre-config.png)
 
-`File > Settings > Plugins > Marketplace`에서 [woowacourse-java-format][Jetbrains Marketplace]을 검색하고 설치한 후 재시작해 주세요:
+`File > Settings > Plugins > Marketplace`에서 [woowacourse-java-format][Jetbrains Marketplace]을 검색해 설치할 수 있습니다. 또는 GitHub Releases에서 최신 버전의 [project.zip][]을 직접 다운로드하고 [빌드해 보기](#빌드해-보기)와 같이 설치할 수도 있습니다. 설치한 후 재시작이 필요합니다.
+
+[project.zip]: https://github.com/yhkee0404/woowacourse-java-format/releases/latest/download/project.zip
 
 ![IntelliJ > File > Settings > Plugins > Marketplace](screenshots/intellij-install-marketplace.png)
 
