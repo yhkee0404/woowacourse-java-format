@@ -3202,9 +3202,6 @@ public class JavaInputAstVisitor extends TreePathScanner<Void, Void> {
    * foo}.
    */
   private static ExpressionTree getArrayBase(ExpressionTree node) {
-    if (! (node instanceof ArrayAccessTree) && node.getKind() == ARRAY_ACCESS) {
-      int b = 3;
-    }
     while (node instanceof ArrayAccessTree) {
       node = ((ArrayAccessTree) node).getExpression();
     }
