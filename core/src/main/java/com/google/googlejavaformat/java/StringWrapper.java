@@ -194,6 +194,12 @@ public final class StringWrapper {
         int startPosition = getStartPosition(tree);
         int endPosition = getEndPosition(unit, tree);
         String text = input.substring(startPosition, endPosition);
+        int lineStartPosition = lineMap.getStartPosition(lineMap.getLineNumber(startPosition));
+        int startColumn =
+            CharMatcher.whitespace()
+                    .negate()
+                    .indexIn(input.substring(lineStartPosition, endPosition))
+                + 1;
 
         // Find the source code of the text block with incidental whitespace removed.
         // The first line of the text block is always """, and it does not affect incidental
@@ -204,13 +210,13 @@ public final class StringWrapper {
         int deindent =
             initialLines.get(1).stripTrailing().length() - lines.get(0).stripTrailing().length();
 
-        int startColumn = lineMap.getColumnNumber(startPosition);
         String prefix =
-            (deindent == 0 || lines.stream().anyMatch(x -> x.length() + startColumn > columnLimit))
+            (deindent == 0
+                    || lines.stream().anyMatch(x -> x.length() + startColumn - 1 > columnLimit))
                 ? ""
                 : " ".repeat(startColumn - 1);
 
-        StringBuilder output = new StringBuilder(TEXT_BLOCK_DELIMITER);
+        StringBuilder output = new StringBuilder(initialLines.get(0).stripLeading());
         for (int i = 0; i < lines.size(); i++) {
           String line = lines.get(i);
           String trimmed = line.stripLeading().stripTrailing();

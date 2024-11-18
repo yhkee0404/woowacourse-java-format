@@ -200,7 +200,9 @@ class GoogleJavaFormatConfigurable extends BaseConfigurable implements Searchabl
             false));
   }
 
-  /** @noinspection ALL */
+  /**
+   * @noinspection ALL
+   */
   public JComponent $$$getRootComponent$$$() {
     return panel;
   }

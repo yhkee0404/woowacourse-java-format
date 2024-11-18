@@ -43,10 +43,10 @@ class RSLs {
             """;
     String j =
             """
-            lorem
-            one long incredibly unbroken sentence moving from topic to topic so that no one had a chance to interrupt
-            ipsum
-            """;
+lorem
+one one long incredibly unbroken sentence moving from topic to topic so that no one had a chance to interrupt
+ipsum
+""";
     String k =
             """
 lorem
@@ -65,5 +65,39 @@ ipsum
         hello %s
         """.formatted(
                 "world");
+        f(
+                /* foo= */ """
+                foo
+                """,
+                /* bar= */ """
+                bar
+                """);
+        """
+        hello
+        """.codePoints()
+                .forEach(System.err::println);
+        String s =
+                """
+                foo
+                """
+                        + """
+                        bar
+                        """;
+        String t =
+                """
+foo
+"""
+                        + """
+bar
+""";
+        String u =
+                stringVariableOne
+                        + """
+                        ...
+                        """
+                        + stringVariableTwo
+                        + """
+                        ...
+                        """;
     }
 }
