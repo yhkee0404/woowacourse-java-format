@@ -46,7 +46,6 @@ import com.sun.tools.javac.util.Options;
 import com.sun.tools.javac.util.Position;
 import java.io.IOException;
 import java.io.UncheckedIOException;
-import java.lang.reflect.Method;
 import java.net.URI;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -62,7 +61,6 @@ import javax.tools.DiagnosticListener;
 import javax.tools.JavaFileObject;
 import javax.tools.SimpleJavaFileObject;
 import javax.tools.StandardLocation;
-import org.jspecify.annotations.Nullable;
 
 /** Wraps string literals that exceed the column limit. */
 public final class StringWrapper {
@@ -205,10 +203,11 @@ public final class StringWrapper {
         // The first line of the text block is always """, and it does not affect incidental
         // whitespace.
         ImmutableList<String> initialLines = text.lines().collect(toImmutableList());
-        String stripped = stripIndent(initialLines.stream().skip(1).collect(joining(separator)));
+        String stripped = initialLines.stream().skip(1).collect(joining(separator)).stripIndent();
         ImmutableList<String> lines = stripped.lines().collect(toImmutableList());
         int deindent =
-            initialLines.get(1).stripTrailing().length() - lines.get(0).stripTrailing().length();
+            getLast(initialLines).stripTrailing().length()
+                - getLast(lines).stripTrailing().length();
 
         String prefix =
             (deindent == 0
@@ -219,7 +218,7 @@ public final class StringWrapper {
         StringBuilder output = new StringBuilder(initialLines.get(0).stripLeading());
         for (int i = 0; i < lines.size(); i++) {
           String line = lines.get(i);
-          String trimmed = line.stripLeading().stripTrailing();
+          String trimmed = line.stripTrailing();
           output.append(separator);
           if (!trimmed.isEmpty()) {
             // Don't add incidental leading whitespace to empty lines
@@ -228,7 +227,7 @@ public final class StringWrapper {
           if (i == lines.size() - 1) {
             String withoutDelimiter =
                 trimmed.substring(0, trimmed.length() - TEXT_BLOCK_DELIMITER.length());
-            if (!withoutDelimiter.isEmpty()) {
+            if (!withoutDelimiter.stripLeading().isEmpty()) {
               output.append(withoutDelimiter).append('\\').append(separator).append(prefix);
             }
             // If the trailing line is just """, indenting it more than the prefix of incidental
@@ -277,30 +276,6 @@ public final class StringWrapper {
             Range.closedOpen(getStartPosition(flat.get(0)), getEndPosition(unit, getLast(flat))),
             reflow(separator, columnLimit, startColumn, trailing, components, first.get()));
       }
-    }
-  }
-
-  private static final Method STRIP_INDENT = getStripIndent();
-
-  private static @Nullable Method getStripIndent() {
-    if (Runtime.version().feature() < 15) {
-      return null;
-    }
-    try {
-      return String.class.getMethod("stripIndent");
-    } catch (NoSuchMethodException e) {
-      throw new LinkageError(e.getMessage(), e);
-    }
-  }
-
-  private static String stripIndent(String input) {
-    if (STRIP_INDENT == null) {
-      return input;
-    }
-    try {
-      return (String) STRIP_INDENT.invoke(input);
-    } catch (ReflectiveOperationException e) {
-      throw new LinkageError(e.getMessage(), e);
     }
   }
 

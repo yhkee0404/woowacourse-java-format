@@ -1,4 +1,3 @@
-import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 /*
  * Copyright 2024 The Woowacourse Java Format Authors. All Rights Reserved.
  * Copyright 2017 Google Inc. All Rights Reserved.
@@ -15,6 +14,8 @@ import org.jetbrains.intellij.platform.gradle.TestFrameworkType
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 // https://github.com/JetBrains/intellij-platform-gradle-plugin/releases
 plugins {
@@ -33,6 +34,7 @@ repositories {
   }
 }
 
+// https://github.com/yhkee0404/woowacourse-java-format/releases
 val googleJavaFormatVersion = "${System.getenv("WOOWACOURSE_LOCAL_VERSION")}"
 
 java {

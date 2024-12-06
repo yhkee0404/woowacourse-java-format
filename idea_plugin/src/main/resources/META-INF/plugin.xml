@@ -36,6 +36,10 @@
   ]]></description>
   <change-notes><![CDATA[
     <dl>
+      <dt>1.25.0.0_WOOWACOURSE</dt>
+      <dd>Pulled from google-java-format 1.25.0. </dd>
+      <dt>1.24.0.14_WOOWACOURSE</dt>
+      <dd>Synced with jar to reflow long strings. Forced to break dots excluding the first.</dd>
       <dt>1.24.0.0_WOOWACOURSE</dt>
       <dd>Forked to woowacourse-java-format.</dd>
       <dt>1.24.0.0</dt>
