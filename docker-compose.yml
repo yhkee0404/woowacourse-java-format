@@ -28,7 +28,7 @@ services:
         [ -z "$$WOOWACOURSE_LOCAL_VERSION" ] && { echo "Need to set WOOWACOURSE_LOCAL_VERSION"; exit 1; }
         mvn -pl core -am --no-transfer-progress versions:set -DnewVersion="$$WOOWACOURSE_LOCAL_VERSION"
         mvn -pl core -am --no-transfer-progress clean install
-        mvn --no-transfer-progress versions:revert
+        mvn -pl core -am --no-transfer-progress versions:revert
   
   eclipse_plugin:
     image: "maven:3.8.8-eclipse-temurin-21-alpine"
@@ -46,11 +46,10 @@ services:
       - |
         alias mvn='mvn -Duser.home=$$PWD'
         [ -z "$$WOOWACOURSE_LOCAL_VERSION" ] && { echo "Need to set WOOWACOURSE_LOCAL_VERSION"; exit 1; }
-        mvn --no-transfer-progress versions:set -DnewVersion="$$WOOWACOURSE_LOCAL_VERSION"
         mvn -pl eclipse_plugin --no-transfer-progress versions:set -DnewVersion="$$WOOWACOURSE_LOCAL_VERSION"
         mvn -pl eclipse_plugin --no-transfer-progress tycho-versions:update-eclipse-metadata
         mvn -pl eclipse_plugin --no-transfer-progress clean install
-        mvn --no-transfer-progress versions:revert
+        mvn -pl eclipse_plugin --no-transfer-progress versions:revert
 
   idea_plugin:
     image: "gradle:8.10.2-jdk17"
