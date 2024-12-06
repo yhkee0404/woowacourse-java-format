@@ -68,7 +68,9 @@ jobs:
           cache: "maven"
       - name: "Install"
         shell: bash
-        run: mvn --no-transfer-progress -DskipTests=true -Dmaven.javadoc.skip=true -B -V install
+        run: |
+          mvn --no-transfer-progress versions:set versions:commit -DnewVersion=1.25.0.0_WOOWACOURSE_DUMMY
+          mvn --no-transfer-progress -DskipTests=true -Dmaven.javadoc.skip=true -B -V install
       - name: "Test"
         shell: bash
         run: mvn -B surefire:test
