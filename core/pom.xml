@@ -23,7 +23,7 @@
   <parent>
     <groupId>io.github.yhkee0404.woowacoursejavaformat</groupId>
     <artifactId>woowacourse-java-format-parent</artifactId>
-  <version>HEAD-SNAPSHOT</version>
+  <version>1.25.0.0_WOOWACOURSE</version>
   </parent>
 
   <artifactId>woowacourse-java-format</artifactId>
