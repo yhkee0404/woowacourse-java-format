@@ -3,6 +3,15 @@ services:
   core:
     image: "maven:3.8.8-eclipse-temurin-21-alpine"
     user: "${UID}:${GID}"
+    post_start:
+      - user: root
+        command:
+          - sh
+          - -c
+          - |
+            apk add --no-cache shadow
+            groupadd --gid ${GID} ${USERNAME}
+            useradd --uid ${UID} --gid ${GID} -m ${USERNAME}
     environment:
       - WOOWACOURSE_LOCAL_VERSION=$WOOWACOURSE_LOCAL_VERSION
       - MAVEN_CONFIG=/usr/src/mymaven/.m2
@@ -14,6 +23,7 @@ services:
       - -c
     command:
       - |
+        # sleep infinity
         alias mvn='mvn -Duser.home=$$PWD'
         [ -z "$$WOOWACOURSE_LOCAL_VERSION" ] && { echo "Need to set WOOWACOURSE_LOCAL_VERSION"; exit 1; }
         mvn -pl core -am --no-transfer-progress versions:set -DnewVersion="$$WOOWACOURSE_LOCAL_VERSION"

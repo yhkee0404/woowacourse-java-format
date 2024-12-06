@@ -252,5 +252,5 @@ java.lang.Error: no ComponentUI class for: com.intellij.util.ui.tree.PerFileConf
 혹시 윈도우 등에서 Docker Container가 `root` 사용자로 실행되어 파일 소유자가 변경된 경우가 `ls -al` 등으로 확인된다면 다음 실행으로 해결할 수 있습니다:
 
 ```zsh
-sudo chown -R `id -u` .
+sudo chown -R `id -u`:`id -g` .
 ```
